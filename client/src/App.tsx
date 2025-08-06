@@ -18,7 +18,10 @@ import Movies from "@/pages/activities/Movies";
 import Books from "@/pages/activities/Books";
 import Exercise from "@/pages/activities/Exercise";
 import Blog from "@/pages/Blog";
+import BlogPost from "@/components/BlogPost";
 import Contact from "@/pages/Contact";
+import Admin from "@/pages/Admin";
+import Gallery from "@/pages/activities/Gallery";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 
@@ -40,8 +43,11 @@ function Router() {
           <Route path="/activities/movies" component={Movies} />
           <Route path="/activities/books" component={Books} />
           <Route path="/activities/exercise" component={Exercise} />
+          <Route path="/activities/gallery" component={Gallery} />
           <Route path="/blog" component={Blog} />
+          <Route path="/blog/:slug" component={BlogPost} />
           <Route path="/contact" component={Contact} />
+          <Route path="/admin" component={Admin} />
           <Route component={NotFound} />
         </Switch>
       </main>

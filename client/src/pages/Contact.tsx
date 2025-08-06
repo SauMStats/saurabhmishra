@@ -79,8 +79,8 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-academic-blue mr-4" />
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
-                  <a href="mailto:sarah.chen@stanford.edu" className="text-academic-blue hover:text-blue-700 transition-colors duration-200">
-                    sarah.chen@stanford.edu
+                  <a href="mailto:saurabh.mishra@iith.ac.in" className="text-academic-blue hover:text-blue-700 transition-colors duration-200">
+                    saurabh.mishra@iith.ac.in
                   </a>
                 </div>
               </div>
@@ -90,9 +90,10 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-900">Office</h3>
                   <p className="text-gray-600">
-                    Gates Computer Science Building<br />
-                    Stanford University<br />
-                    Stanford, CA 94305
+                    Department of Mathematics<br />
+                    IIT Hyderabad<br />
+                    Kandi, Sangareddy 502285<br />
+                    Telangana, India
                   </p>
                 </div>
               </div>
@@ -115,21 +116,21 @@ export default function Contact() {
               <h3 className="font-semibold text-gray-900 mb-4" data-testid="text-social-heading">Connect Online</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://linkedin.com/in/sarahchen" 
+                  href="https://linkedin.com/in/saurabhmishra" 
                   className="p-3 bg-academic-light rounded-lg hover:bg-gray-200 transition-colors duration-200"
                   data-testid="link-linkedin-contact"
                 >
                   <Linkedin className="w-5 h-5 text-academic-blue" />
                 </a>
                 <a 
-                  href="https://github.com/sarahchen" 
+                  href="https://github.com/saurabhmishra" 
                   className="p-3 bg-academic-light rounded-lg hover:bg-gray-200 transition-colors duration-200"
                   data-testid="link-github-contact"
                 >
                   <Github className="w-5 h-5 text-academic-blue" />
                 </a>
                 <a 
-                  href="mailto:sarah.chen@stanford.edu" 
+                  href="mailto:saurabh.mishra@iith.ac.in" 
                   className="p-3 bg-academic-light rounded-lg hover:bg-gray-200 transition-colors duration-200"
                   data-testid="link-email-contact"
                 >
@@ -142,13 +143,13 @@ export default function Contact() {
             <div className="bg-academic-light p-6 rounded-lg" data-testid="section-collaboration">
               <h3 className="font-semibold text-gray-900 mb-3">Collaboration Interests</h3>
               <ul className="text-gray-600 text-sm space-y-1">
-                <li>• AI Ethics and Fairness Research</li>
-                <li>• Healthcare AI Applications</li>
-                <li>• Climate Informatics Projects</li>
-                <li>• Neural Architecture Search</li>
-                <li>• Interdisciplinary Research Opportunities</li>
-                <li>• Speaking at Academic Conferences</li>
-                <li>• Industry Partnership Discussions</li>
+                <li>• Statistical Genetics & GWAS Methodology</li>
+                <li>• Transcriptome-Wide Association Studies</li>
+                <li>• Gene-Environment Interaction Analysis</li>
+                <li>• Machine Learning in Biostatistics</li>
+                <li>• Causal Inference Methods</li>
+                <li>• Large-Scale Biological Data Analysis</li>
+                <li>• Academic Conference Speaking</li>
               </ul>
             </div>
           </div>

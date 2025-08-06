@@ -17,33 +17,29 @@ export default function Home() {
               />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight" data-testid="text-name">
-              Dr. Sarah Chen
+              Saurabh Mishra
             </h1>
             <p className="text-xl md:text-2xl text-academic-gray mb-8 font-light" data-testid="text-title">
-              PhD in Computer Science | Machine Learning Researcher
+              PhD Student in Mathematics | Biostatistics Researcher
             </p>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed" data-testid="text-bio">
-              Advancing the frontiers of artificial intelligence through novel deep learning architectures and their applications to real-world problems in healthcare and climate science.
+              Advancing statistical genetics and biostatistics through genome-wide association analysis (GWAS) and transcriptome-wide association analysis (TWAS), with focus on gene-environment interactions in complex traits.
             </p>
+            
+            {/* CV Button under profile */}
+            <div className="mt-8 mb-8">
+              <a 
+                href="/cv.pdf" 
+                className="inline-flex items-center px-6 py-3 bg-academic-blue text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-sm"
+                data-testid="button-download-cv"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download CV
+              </a>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
-            <a 
-              href="/cv.pdf" 
-              className="inline-flex items-center px-6 py-3 bg-academic-blue text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-sm"
-              data-testid="button-download-cv"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download CV
-            </a>
-            <Link href="/contact">
-              <a className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200" data-testid="button-contact">
-                <Mail className="w-5 h-5 mr-2" />
-                Contact Me
-              </a>
-            </Link>
-          </div>
+
         </div>
       </section>
 
@@ -65,16 +61,14 @@ export default function Home() {
               <div className="w-12 h-12 bg-academic-blue bg-opacity-10 rounded-lg flex items-center justify-center mb-6">
                 <Lightbulb className="w-6 h-6 text-academic-blue" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4" data-testid="text-nas-title">
-                Neural Architecture Search
+              <h3 className="text-xl font-semibold text-gray-900 mb-4" data-testid="text-gwas-title">
+                GWAS & Statistical Genetics
               </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-nas-description">
-                Developing automated methods for discovering optimal neural network architectures for specific tasks and constraints.
+              <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-gwas-description">
+                Developing advanced statistical methods for genome-wide association analysis to identify genetic variants associated with complex traits.
               </p>
-              <Link href="/research/group">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-nas-learn-more">
-                  Learn more →
-                </a>
+              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-nas-learn-more">
+                Learn more →
               </Link>
             </div>
 
@@ -83,16 +77,14 @@ export default function Home() {
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
                 <Heart className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4" data-testid="text-ethics-title">
-                Medical AI Ethics
+              <h3 className="text-xl font-semibold text-gray-900 mb-4" data-testid="text-twas-title">
+                Transcriptome-Wide Association
               </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-ethics-description">
-                Investigating fairness, transparency, and accountability in AI systems deployed in healthcare settings.
+              <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-twas-description">
+                Integrating gene expression data with genetic variants to understand the molecular mechanisms underlying complex diseases.
               </p>
-              <Link href="/research/group">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-ethics-learn-more">
-                  Learn more →
-                </a>
+              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-ethics-learn-more">
+                Learn more →
               </Link>
             </div>
 
@@ -101,16 +93,14 @@ export default function Home() {
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
                 <Cloud className="w-6 h-6 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4" data-testid="text-climate-title">
-                Climate Modeling
+              <h3 className="text-xl font-semibold text-gray-900 mb-4" data-testid="text-interaction-title">
+                Gene-Environment Interactions
               </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-climate-description">
-                Applying deep learning to improve weather prediction models and climate change impact assessment.
+              <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-interaction-description">
+                Investigating how genetic variants interact with environmental factors to influence complex traits and disease risk.
               </p>
-              <Link href="/research/group">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-climate-learn-more">
-                  Learn more →
-                </a>
+              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-climate-learn-more">
+                Learn more →
               </Link>
             </div>
           </div>

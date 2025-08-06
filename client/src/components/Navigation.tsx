@@ -32,7 +32,7 @@ export default function Navigation() {
               className="text-xl font-semibold text-gray-900 hover:text-academic-blue transition-colors duration-200"
               data-testid="link-logo"
             >
-              Dr. Sarah Chen
+              Saurabh Mishra
             </Link>
           </div>
 
@@ -118,6 +118,9 @@ export default function Navigation() {
                 </Link>
                 <Link href="/activities/exercise" className="nav-dropdown-item" data-testid="link-activities-exercise">
                   Exercise
+                </Link>
+                <Link href="/activities/gallery" className="nav-dropdown-item" data-testid="link-activities-gallery">
+                  Photos
                 </Link>
               </div>
             </div>
@@ -234,6 +237,9 @@ export default function Navigation() {
                     </Link>
                     <Link href="/activities/exercise" className="block px-3 py-2 text-sm text-gray-600 hover:text-academic-blue" data-testid="mobile-link-activities-exercise">
                       Exercise
+                    </Link>
+                    <Link href="/activities/gallery" className="block px-3 py-2 text-sm text-gray-600 hover:text-academic-blue" data-testid="mobile-link-activities-gallery">
+                      Photos
                     </Link>
                   </div>
                 )}

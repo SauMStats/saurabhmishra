@@ -63,6 +63,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin endpoint to get all contact messages
+  app.get("/api/admin/contacts", async (req, res) => {
+    try {
+      const contacts = await storage.getAllContacts();
+      res.json(contacts);
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch contact messages" 
+      });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

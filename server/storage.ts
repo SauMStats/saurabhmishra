@@ -6,6 +6,7 @@ export interface IStorage {
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   createContact(contact: InsertContact): Promise<Contact>;
+  getAllContacts(): Promise<Contact[]>;
   getAllBlogPosts(): Promise<BlogPost[]>;
   getBlogPostBySlug(slug: string): Promise<BlogPost | undefined>;
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
@@ -168,6 +169,12 @@ The healthcare domain provides valuable lessons that can inform ethical AI devel
     };
     this.contacts.set(id, contact);
     return contact;
+  }
+
+  async getAllContacts(): Promise<Contact[]> {
+    return Array.from(this.contacts.values()).sort((a, b) => 
+      new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
   }
 
   async getAllBlogPosts(): Promise<BlogPost[]> {

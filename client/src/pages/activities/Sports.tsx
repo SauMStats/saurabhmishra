@@ -6,10 +6,10 @@ export default function Sports() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-sports-heading">
-            Sports & Athletics
+            Sports & Fitness
           </h1>
           <p className="text-xl text-academic-gray" data-testid="text-sports-subtitle">
-            Staying active and competitive outside the lab
+            Maintaining physical fitness and enjoying sports at IIT Hyderabad
           </p>
         </div>
 
@@ -17,20 +17,20 @@ export default function Sports() {
         <section className="mb-16" data-testid="section-current">
           <h2 className="text-2xl font-semibold text-gray-900 mb-8">Current Activities</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Tennis */}
+            {/* Table Tennis */}
             <div className="bg-academic-light border-l-4 border-academic-blue p-6 rounded-r-lg">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">Tennis</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Table Tennis</h3>
                 <Trophy className="w-6 h-6 text-yellow-500" />
               </div>
               <div className="space-y-2 text-sm text-gray-600 mb-4">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>3x per week</span>
+                  <span>2-3 evenings per week</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Stanford Tennis Courts</span>
+                  <span>IIT Hyderabad Sports Complex</span>
                 </div>
                 <div className="flex items-center">
                   <Target className="w-4 h-4 mr-2 text-academic-blue" />
@@ -38,12 +38,12 @@ export default function Sports() {
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Member of Stanford Graduate Tennis Club. Compete in local tournaments and maintain a USTA 4.5 rating. Tennis provides excellent stress relief and helps maintain focus for research work.
+                Active member of the campus table tennis community. Participate in inter-department tournaments and evening practice sessions. Excellent for quick reflexes and stress relief after long research hours.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-white text-gray-700 rounded-full">USTA 4.5</span>
-                <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Club Member</span>
                 <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Tournament Player</span>
+                <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Evening Practice</span>
+                <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Campus Team</span>
               </div>
             </div>
 
