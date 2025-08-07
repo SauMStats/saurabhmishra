@@ -26,17 +26,6 @@ export default function Home() {
               Advancing statistical genetics and biostatistics through genome-wide association analysis (GWAS) and transcriptome-wide association analysis (TWAS), with focus on gene-environment interactions in complex traits.
             </p>
             
-            {/* CV Button under profile */}
-            <div className="mt-8 mb-8">
-              <a 
-                href="/cv.pdf" 
-                className="inline-flex items-center px-6 py-3 bg-academic-blue text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-sm"
-                data-testid="button-download-cv"
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Download CV
-              </a>
-            </div>
           </div>
 
 
@@ -67,8 +56,10 @@ export default function Home() {
               <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-gwas-description">
                 Developing advanced statistical methods for genome-wide association analysis to identify genetic variants associated with complex traits.
               </p>
-              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-nas-learn-more">
-                Learn more →
+              <Link href="/research/group">
+                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-nas-learn-more">
+                  Learn more →
+                </a>
               </Link>
             </div>
 
@@ -83,8 +74,10 @@ export default function Home() {
               <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-twas-description">
                 Integrating gene expression data with genetic variants to understand the molecular mechanisms underlying complex diseases.
               </p>
-              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-ethics-learn-more">
-                Learn more →
+              <Link href="/research/group">
+                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-ethics-learn-more">
+                  Learn more →
+                </a>
               </Link>
             </div>
 
@@ -99,8 +92,10 @@ export default function Home() {
               <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-interaction-description">
                 Investigating how genetic variants interact with environmental factors to influence complex traits and disease risk.
               </p>
-              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-climate-learn-more">
-                Learn more →
+              <Link href="/research/group">
+                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-climate-learn-more">
+                  Learn more →
+                </a>
               </Link>
             </div>
           </div>

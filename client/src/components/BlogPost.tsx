@@ -1,8 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
 import { useParams, Link } from "wouter";
 import { Calendar, Clock, ArrowLeft, User } from "lucide-react";
 import { useEffect } from "react";
-import type { BlogPost as BlogPostType } from "@shared/schema";
+import { getBlogPost, type BlogPost as BlogPostType } from "@/data/blog-posts";
 
 declare global {
   interface Window {
@@ -14,10 +13,9 @@ export default function BlogPost() {
   const params = useParams();
   const slug = params.slug;
 
-  const { data: post, isLoading, error } = useQuery<BlogPostType>({
-    queryKey: ["/api/blog", slug],
-    enabled: !!slug,
-  });
+  const post = slug ? getBlogPost(slug) : undefined;
+  const isLoading = false;
+  const error = !post && slug;
 
   useEffect(() => {
     // Re-render MathJax when post content loads
