@@ -1,0 +1,580 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sarah Chen - Academic Researcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'body': ['Source Sans Pro', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    },
+                    colors: {
+                        'academic-gray': '#1F2937',
+                        'academic-blue': '#3B82F6',
+                        'academic-light': '#F3F4F6'
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+
+<body class="bg-gray-50 font-body text-gray-800 antialiased">
+    <!-- @COMPONENT: Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-semibold text-academic-gray hover:text-academic-blue transition-colors duration-200">
+                        Dr. Sarah Chen
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="text-academic-gray hover:text-academic-blue px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
+                        <a href="#" class="text-gray-600 hover:text-academic-blue px-3 py-2 text-sm font-medium transition-colors duration-200">About</a>
+                        <a href="#" class="text-gray-600 hover:text-academic-blue px-3 py-2 text-sm font-medium transition-colors duration-200">Research</a>
+                        <a href="#" class="text-gray-600 hover:text-academic-blue px-3 py-2 text-sm font-medium transition-colors duration-200">Teaching</a>
+                        <a href="#" class="text-gray-600 hover:text-academic-blue px-3 py-2 text-sm font-medium transition-colors duration-200">Blog</a>
+                        <a href="#" class="text-gray-600 hover:text-academic-blue px-3 py-2 text-sm font-medium transition-colors duration-200">CV</a>
+                        <a href="#" class="text-gray-600 hover:text-academic-blue px-3 py-2 text-sm font-medium transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-academic-blue focus:outline-none focus:text-academic-blue transition-colors duration-200" data-event="click:toggleMobileMenu">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden hidden" id="mobile-menu" data-implementation="Toggle visibility with JavaScript">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
+                <a href="#" class="text-academic-gray block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#" class="text-gray-600 hover:text-academic-blue block px-3 py-2 text-base font-medium transition-colors duration-200">About</a>
+                <a href="#" class="text-gray-600 hover:text-academic-blue block px-3 py-2 text-base font-medium transition-colors duration-200">Research</a>
+                <a href="#" class="text-gray-600 hover:text-academic-blue block px-3 py-2 text-base font-medium transition-colors duration-200">Teaching</a>
+                <a href="#" class="text-gray-600 hover:text-academic-blue block px-3 py-2 text-base font-medium transition-colors duration-200">Blog</a>
+                <a href="#" class="text-gray-600 hover:text-academic-blue block px-3 py-2 text-base font-medium transition-colors duration-200">CV</a>
+                <a href="#" class="text-gray-600 hover:text-academic-blue block px-3 py-2 text-base font-medium transition-colors duration-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h1 class="text-4xl lg:text-5xl font-bold text-academic-gray mb-6 font-sans">
+                        <span data-bind="user.name">Dr. Sarah Chen</span>
+                    </h1>
+                    <p class="text-xl lg:text-2xl text-gray-600 mb-8 font-light leading-relaxed">
+                        <span data-bind="user.tagline">PhD in Computer Science | Machine Learning Researcher | Academic</span>
+                    </p>
+                    <div class="prose prose-lg text-gray-700 mb-8">
+                        <p data-bind="user.bio">
+                            I'm a PhD candidate at Stanford University specializing in machine learning and natural language processing. 
+                            My research focuses on developing robust and interpretable AI systems for healthcare applications.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-academic-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-academic-blue transition-colors duration-200">
+                            <i class="fas fa-download mr-2"></i>
+                            Download CV
+                        </a>
+                        <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-academic-blue transition-colors duration-200">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:justify-self-end">
+                    <div class="relative w-80 h-80 mx-auto lg:w-96 lg:h-96">
+                        <!-- Professional academic portrait -->
+                        <img src="https://pixabay.com/get/g769f1a648d86820aa7e0ee536b28ddabc4c88fb6c00f4a43d19c68cfefcdfd7883e9bfcf6c4d3866fb08c0ddeb48d958ac5dd5dae5dd1604ff3dbd08f563a9b9_1280.jpg" 
+                             alt="Dr. Sarah Chen - Professional headshot" 
+                             class="rounded-2xl shadow-2xl w-full h-full object-cover"
+                             data-mock-image="true" 
+                             data-implementation="Replace with actual profile photo">
+                        <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Research Preview -->
+    <section class="py-16 bg-academic-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-academic-gray mb-4 font-sans">Research Interests</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    My research spans machine learning, natural language processing, and healthcare AI, 
+                    with a focus on developing interpretable and robust systems.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: researchAreas.map(area => ( -->
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                    <div class="w-12 h-12 bg-academic-blue rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-academic-gray mb-3" data-bind="area.title">Machine Learning Theory</h3>
+                    <p class="text-gray-600 mb-4" data-bind="area.description">
+                        Developing theoretical foundations for robust and interpretable machine learning algorithms, 
+                        with applications in high-stakes domains.
+                    </p>
+                    <a href="#" class="text-academic-blue hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                        Learn more <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                    <div class="w-12 h-12 bg-academic-blue rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-language text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-academic-gray mb-3">Natural Language Processing</h3>
+                    <p class="text-gray-600 mb-4">
+                        Advancing language models for healthcare applications, focusing on clinical text analysis 
+                        and medical knowledge extraction.
+                    </p>
+                    <a href="#" class="text-academic-blue hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                        Learn more <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                    <div class="w-12 h-12 bg-academic-blue rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-heartbeat text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-academic-gray mb-3">Healthcare AI</h3>
+                    <p class="text-gray-600 mb-4">
+                        Applying AI techniques to solve critical healthcare challenges, including diagnostic 
+                        assistance and personalized treatment recommendations.
+                    </p>
+                    <a href="#" class="text-academic-blue hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                        Learn more <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-academic-blue text-base font-medium rounded-lg text-academic-blue bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-academic-blue transition-colors duration-200">
+                    View All Research Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Research Preview -->
+
+    <!-- @COMPONENT: Teaching Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-academic-gray mb-4 font-sans">Teaching Experience</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    I'm passionate about education and have taught courses in computer science, 
+                    machine learning, and statistics at various levels.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- @MAP: courses.map(course => ( -->
+                <div class="bg-academic-light rounded-xl p-8 border border-gray-200">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-academic-gray mb-2" data-bind="course.title">CS 229: Machine Learning</h3>
+                            <p class="text-gray-600 font-medium" data-bind="course.role">Teaching Assistant</p>
+                        </div>
+                        <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full" data-bind="course.term">Fall 2023</span>
+                    </div>
+                    <p class="text-gray-700 mb-4" data-bind="course.description">
+                        Assisted with lectures, held office hours, and graded assignments for 200+ students. 
+                        Developed supplementary materials for reinforcement learning topics.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-users mr-2"></i>
+                        <span data-bind="course.students">200+ students</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-star mr-2"></i>
+                        <span data-bind="course.rating">4.8/5.0 rating</span>
+                    </div>
+                </div>
+
+                <div class="bg-academic-light rounded-xl p-8 border border-gray-200">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-academic-gray mb-2">CS 106A: Programming Methodology</h3>
+                            <p class="text-gray-600 font-medium">Section Leader</p>
+                        </div>
+                        <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">Spring 2023</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Led weekly sections for introductory programming course. Mentored students in Java 
+                        programming fundamentals and problem-solving techniques.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-users mr-2"></i>
+                        <span>15 students per section</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-star mr-2"></i>
+                        <span>4.9/5.0 rating</span>
+                    </div>
+                </div>
+
+                <div class="bg-academic-light rounded-xl p-8 border border-gray-200">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-academic-gray mb-2">STATS 202: Data Mining</h3>
+                            <p class="text-gray-600 font-medium">Course Assistant</p>
+                        </div>
+                        <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">Winter 2023</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Supported graduate-level data mining course. Created tutorial materials for 
+                        advanced statistical learning techniques and supervised lab sessions.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-users mr-2"></i>
+                        <span>50+ students</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-star mr-2"></i>
+                        <span>4.7/5.0 rating</span>
+                    </div>
+                </div>
+
+                <div class="bg-academic-light rounded-xl p-8 border border-gray-200">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-academic-gray mb-2">CS 221: Artificial Intelligence</h3>
+                            <p class="text-gray-600 font-medium">Grader</p>
+                        </div>
+                        <span class="text-sm text-gray-500 bg-white px-3 py-1 rounded-full">Fall 2022</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Evaluated student assignments and projects on search algorithms, machine learning, 
+                        and game theory. Provided detailed feedback on coding assignments.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-users mr-2"></i>
+                        <span>300+ students</span>
+                        <span class="mx-2">•</span>
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>20 hrs/week</span>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-academic-blue text-base font-medium rounded-lg text-academic-blue bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-academic-blue transition-colors duration-200">
+                    View Teaching Philosophy
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Teaching Section -->
+
+    <!-- @COMPONENT: Blog Preview -->
+    <section class="py-16 bg-academic-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-academic-gray mb-4 font-sans">Latest Blog Posts</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    I write about machine learning research, academic life, and technical insights 
+                    from my journey as a PhD student.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- @MAP: blogPosts.map(post => ( -->
+                <article class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                    <div class="flex items-center text-sm text-gray-500 mb-4">
+                        <time data-bind="post.date">December 15, 2023</time>
+                        <span class="mx-2">•</span>
+                        <span data-bind="post.readTime">8 min read</span>
+                        <span class="mx-2">•</span>
+                        <span class="bg-academic-blue text-white px-2 py-1 rounded text-xs" data-bind="post.category">Research</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-academic-gray mb-3 hover:text-academic-blue transition-colors duration-200">
+                        <a href="#" data-bind="post.title">Understanding Transformer Attention Mechanisms: A Mathematical Deep Dive</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4" data-bind="post.excerpt">
+                        An in-depth exploration of how attention mechanisms work in transformer models, 
+                        with mathematical derivations and intuitive explanations. We'll cover 
+                        self-attention, multi-head attention, and their role in modern NLP...
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-academic-blue hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span data-bind="post.likes">42</span>
+                            <i class="fas fa-comment ml-3 mr-1"></i>
+                            <span data-bind="post.comments">7</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                    <div class="flex items-center text-sm text-gray-500 mb-4">
+                        <time>December 8, 2023</time>
+                        <span class="mx-2">•</span>
+                        <span>5 min read</span>
+                        <span class="mx-2">•</span>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Academic Life</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-academic-gray mb-3 hover:text-academic-blue transition-colors duration-200">
+                        <a href="#">Navigating the PhD Journey: Lessons from Year 4</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Reflections on the challenges and rewards of doctoral studies. In this post, 
+                        I share insights on managing research projects, maintaining work-life balance, 
+                        and preparing for the academic job market...
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-academic-blue hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>28</span>
+                            <i class="fas fa-comment ml-3 mr-1"></i>
+                            <span>12</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                    <div class="flex items-center text-sm text-gray-500 mb-4">
+                        <time>November 30, 2023</time>
+                        <span class="mx-2">•</span>
+                        <span>10 min read</span>
+                        <span class="mx-2">•</span>
+                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Tutorial</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-academic-gray mb-3 hover:text-academic-blue transition-colors duration-200">
+                        <a href="#">Implementing BERT from Scratch: A PyTorch Tutorial</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Step-by-step guide to building BERT architecture from the ground up. 
+                        We'll implement the transformer encoder, positional embeddings, and 
+                        pre-training objectives with detailed code examples...
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-academic-blue hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>67</span>
+                            <i class="fas fa-comment ml-3 mr-1"></i>
+                            <span>15</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
+                    <div class="flex items-center text-sm text-gray-500 mb-4">
+                        <time>November 22, 2023</time>
+                        <span class="mx-2">•</span>
+                        <span>6 min read</span>
+                        <span class="mx-2">•</span>
+                        <span class="bg-academic-blue text-white px-2 py-1 rounded text-xs">Research</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-academic-gray mb-3 hover:text-academic-blue transition-colors duration-200">
+                        <a href="#">Interpretability in Healthcare AI: Why It Matters</a>
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Exploring the critical importance of explainable AI in medical applications. 
+                        This post discusses current approaches to model interpretability and their 
+                        implications for clinical decision-making...
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-academic-blue hover:text-blue-700 font-medium text-sm transition-colors duration-200">
+                            Read more <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-heart mr-1"></i>
+                            <span>34</span>
+                            <i class="fas fa-comment ml-3 mr-1"></i>
+                            <span>9</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <!-- Math Demo Section -->
+            <div class="mt-12 bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                <h3 class="text-lg font-semibold text-academic-gray mb-4">LaTeX/MathJax Support Demo</h3>
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-gray-700 mb-4">
+                        This blog supports mathematical notation using MathJax. Here are some examples:
+                    </p>
+                    <div class="bg-gray-50 p-4 rounded-lg font-mono text-sm mb-4">
+                        <p>Inline math: The loss function is defined as $L(\theta) = \frac{1}{n}\sum_{i=1}^{n} \ell(f_\theta(x_i), y_i)$</p>
+                        <br>
+                        <p>Display math:</p>
+                        $$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-academic-blue text-base font-medium rounded-lg text-academic-blue bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-academic-blue transition-colors duration-200">
+                    View All Posts
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Blog Preview -->
+
+    <!-- @COMPONENT: Contact CTA -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-academic-gray mb-6 font-sans">Let's Connect</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                I'm always interested in discussing research collaborations, academic opportunities, 
+                or simply connecting with fellow researchers in the field.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:sarah.chen@stanford.edu" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-academic-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-academic-blue transition-colors duration-200">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Email Me
+                </a>
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-academic-blue transition-colors duration-200">
+                    <i class="fas fa-calendar mr-2"></i>
+                    Schedule a Meeting
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact CTA -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-academic-gray text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Dr. Sarah Chen</h3>
+                    <p class="text-gray-300 mb-4">
+                        PhD Candidate in Computer Science<br>
+                        Stanford University<br>
+                        Machine Learning & NLP Research
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Social Media Icons -->
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="ORCID">
+                            <i class="fab fa-orcid text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="GitHub">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Research Projects</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Publications</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Teaching</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">CV Download</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <div class="text-gray-300 space-y-2">
+                        <p>
+                            <i class="fas fa-envelope mr-2"></i>
+                            sarah.chen@stanford.edu
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Stanford, CA 94305
+                        </p>
+                        <p>
+                            <i class="fas fa-building mr-2"></i>
+                            Gates Computer Science Building
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2023 Dr. Sarah Chen. Built with ❤️ and hosted on GitHub Pages.</p>
+                <p class="mt-2 text-sm">
+                    This site is powered by Jekyll and designed for academic professionals.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Simple mobile menu toggle
+        (function() {
+            const menuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // TODO: Implement smooth scrolling, form handling, and other interactive features
+            // TODO: Add search functionality for blog posts
+            // TODO: Implement dark mode toggle
+            // TODO: Add analytics tracking
+        })();
+    </script>
+</body>
+</html>
