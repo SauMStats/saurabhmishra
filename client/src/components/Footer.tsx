@@ -69,7 +69,7 @@ export default function Footer() {
           {/* Copyright and Additional Info */}
           <div className="border-t border-gray-200 pt-8">
             <p className="text-gray-500 text-sm" data-testid="text-copyright">
-              © 2023 Dr. Sarah Chen. All rights reserved.
+              © {new Date().getFullYear()} Saurabh Mishra. All rights reserved.
             </p>
             <p className="text-gray-400 text-xs mt-2" data-testid="text-updated">
               Built with GitHub Pages • Last updated November 2023
