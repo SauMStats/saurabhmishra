@@ -106,7 +106,7 @@ export default function Blog() {
 
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 hover:text-academic-blue transition-colors duration-200" data-testid={`blog-title-${post.slug}`}>
                   <Link href={`/blog/${post.slug}`}>
-                    <a>{post.title}</a>
+                    {post.title}
                   </Link>
                 </h2>
 
@@ -125,11 +125,9 @@ export default function Blog() {
                   </div>
                 )}
 
-                <Link href={`/blog/${post.slug}`}>
-                  <a className="inline-flex items-center text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid={`blog-read-more-${post.slug}`}>
-                    Read more
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
+                <Link href={`/blog/${post.slug}`} className="inline-flex items-center text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid={`blog-read-more-${post.slug}`}>
+                  Read more
+                  <ArrowRight className="ml-2 w-4 h-4" />
                 </Link>
               </article>
             ))}

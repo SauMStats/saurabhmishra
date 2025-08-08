@@ -56,10 +56,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-gwas-description">
                 Developing advanced statistical methods for genome-wide association analysis to identify genetic variants associated with complex traits.
               </p>
-              <Link href="/research/group">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-nas-learn-more">
-                  Learn more →
-                </a>
+              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-nas-learn-more">
+                Learn more →
               </Link>
             </div>
 
@@ -74,10 +72,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-twas-description">
                 Integrating gene expression data with genetic variants to understand the molecular mechanisms underlying complex diseases.
               </p>
-              <Link href="/research/group">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-ethics-learn-more">
-                  Learn more →
-                </a>
+              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-ethics-learn-more">
+                Learn more →
               </Link>
             </div>
 
@@ -92,10 +88,8 @@ export default function Home() {
               <p className="text-gray-600 mb-4 leading-relaxed" data-testid="text-interaction-description">
                 Investigating how genetic variants interact with environmental factors to influence complex traits and disease risk.
               </p>
-              <Link href="/research/group">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-climate-learn-more">
-                  Learn more →
-                </a>
+              <Link href="/research/group" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-climate-learn-more">
+                Learn more →
               </Link>
             </div>
           </div>
@@ -180,11 +174,9 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/research/publications">
-              <a className="inline-flex items-center text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-all-publications">
-                View all publications
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </a>
+            <Link href="/research/publications" className="inline-flex items-center text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-all-publications">
+              View all publications
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -212,16 +204,14 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4 hover:text-academic-blue transition-colors duration-200" data-testid="text-blog1-title">
                 <Link href="/blog">
-                  <a>The Mathematics Behind Neural Architecture Search</a>
+                  The Mathematics Behind Neural Architecture Search
                 </Link>
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4" data-testid="text-blog1-excerpt">
                 Exploring the mathematical foundations of automated neural network design, including gradient-based optimization techniques and the role of differentiable architecture search.
               </p>
-              <Link href="/blog">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-blog1-read-more">
-                  Read more →
-                </a>
+              <Link href="/blog" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-blog1-read-more">
+                Read more →
               </Link>
             </article>
 
@@ -234,26 +224,22 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4 hover:text-academic-blue transition-colors duration-200" data-testid="text-blog2-title">
                 <Link href="/blog">
-                  <a>Building Ethical AI Systems: Lessons from Healthcare</a>
+                  Building Ethical AI Systems: Lessons from Healthcare
                 </Link>
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4" data-testid="text-blog2-excerpt">
                 Reflections on developing responsible AI systems for medical applications, addressing bias, fairness, and the importance of interdisciplinary collaboration.
               </p>
-              <Link href="/blog">
-                <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-blog2-read-more">
-                  Read more →
-                </a>
+              <Link href="/blog" className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-blog2-read-more">
+                Read more →
               </Link>
             </article>
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/blog">
-              <a className="inline-flex items-center text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-all-posts">
-                View all posts
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </a>
+            <Link href="/blog" className="inline-flex items-center text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-all-posts">
+              View all posts
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </div>
         </div>
