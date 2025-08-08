@@ -27,7 +27,7 @@ function Router() {
     <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow">
-        <Switch>
+        <Switch base="/saurabhmishra">
           <Route path="/" component={Home} />
           <Route path="/bio" component={Bio} />
           <Route path="/research/group" component={ResearchGroup} />
