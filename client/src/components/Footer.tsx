@@ -72,7 +72,8 @@ export default function Footer() {
               © {new Date().getFullYear()} Saurabh Mishra. All rights reserved.
             </p>
             <p className="text-gray-400 text-xs mt-2" data-testid="text-updated">
-              Built with GitHub Pages • Last updated November 2023
+              {/* Built with GitHub Pages • Last updated November 2023 */}
+              Built with GitHub Pages • Last updated {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}
             </p>
           </div>
         </div>
