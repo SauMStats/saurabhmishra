@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navigation from "@/components/Navigation";
@@ -22,12 +22,14 @@ import Gallery from "@/pages/activities/Gallery";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 
-function Router() {
+// This is the component that holds your routes.
+// We've renamed it to AppRoutes to avoid conflict with the Router component from wouter.
+function AppRoutes() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
       <main className="flex-grow">
-        <Switch base="/saurabhmishra">
+        <Switch>
           <Route path="/" component={Home} />
           <Route path="/bio" component={Bio} />
           <Route path="/research/group" component={ResearchGroup} />
@@ -52,6 +54,7 @@ function Router() {
   );
 }
 
+// The main App component that handles providers and routing setup.
 function App() {
   useEffect(() => {
     // Load MathJax
@@ -83,7 +86,9 @@ function App() {
   return (
     <TooltipProvider>
       <Toaster />
-      <Router />
+      <Router base="/saurabhmishra">
+        <AppRoutes />
+      </Router>
     </TooltipProvider>
   );
 }
