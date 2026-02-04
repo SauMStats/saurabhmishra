@@ -2,7 +2,7 @@ import { SiOrcid, SiGooglescholar, SiLinkedin, SiGithub, SiX, SiInstagram } from
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 py-12">
+    <footer className="bg-white border-t border-gray-200 py-8">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center">
           <h3 className="text-lg font-semibold text-gray-900 mb-6" data-testid="text-connect-heading">
@@ -30,7 +30,7 @@ export default function Footer() {
             </a>
             
             <a 
-              href="https://linkedin.com/in/sarahchen" 
+              href="https://www.linkedin.com/in/saurabh-mishra-814970240/" 
               className="text-gray-400 hover:text-blue-700 transition-colors duration-200" 
               aria-label="LinkedIn"
               data-testid="link-linkedin"
@@ -39,7 +39,7 @@ export default function Footer() {
             </a>
             
             <a 
-              href="https://github.com/sarahchen" 
+              href="https://github.com/SauMStats" 
               className="text-gray-400 hover:text-gray-900 transition-colors duration-200" 
               aria-label="GitHub"
               data-testid="link-github"
@@ -48,7 +48,7 @@ export default function Footer() {
             </a>
             
             <a 
-              href="https://x.com/sarahchen" 
+              href="https://saumstats.github.io/saurabhmishra/" 
               className="text-gray-400 hover:text-black transition-colors duration-200" 
               aria-label="Twitter"
               data-testid="link-twitter"
@@ -57,7 +57,7 @@ export default function Footer() {
             </a>
             
             <a 
-              href="https://instagram.com/sarahchen" 
+              href="https://saumstats.github.io/saurabhmishra/" 
               className="text-gray-400 hover:text-pink-600 transition-colors duration-200" 
               aria-label="Instagram"
               data-testid="link-instagram"
