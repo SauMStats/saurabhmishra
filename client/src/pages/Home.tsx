@@ -10,7 +10,7 @@ export default function Home() {
           <div className="text-center mb-6">
             <div className="mb-6">
               <img 
-                src="/PhotoForWebsite.jpg"
+                src="./PhotoForWebsite.jpg"
                 // "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" 
                 alt="Saurabh Mishra - Academic Researcher" 
                 className="w-36 h-36 rounded-full mx-auto shadow-lg object-cover"
