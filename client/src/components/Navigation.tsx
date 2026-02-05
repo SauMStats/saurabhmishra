@@ -65,18 +65,18 @@ export default function Navigation() {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                <Link href="/research/group" className="nav-dropdown-item" data-testid="link-research-group">
+                {/* <Link href="/research/group" className="nav-dropdown-item" data-testid="link-research-group">
                   Research Group
-                </Link>
+                </Link> */}
                 <Link href="/research/talks" className="nav-dropdown-item" data-testid="link-research-talks">
                   Talks
                 </Link>
                 <Link href="/research/publications" className="nav-dropdown-item" data-testid="link-research-publications">
                   Publications
                 </Link>
-                <Link href="/research/collaborators" className="nav-dropdown-item" data-testid="link-research-collaborators">
+                {/* <Link href="/research/collaborators" className="nav-dropdown-item" data-testid="link-research-collaborators">
                   Collaborators
-                </Link>
+                </Link> */}
               </div>
             </div>
 
