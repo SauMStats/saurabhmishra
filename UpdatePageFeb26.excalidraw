@@ -12,7 +12,7 @@
       "height": 62.981246948242195,
       "angle": 0,
       "strokeColor": "#2f9e44",
-      "backgroundColor": "transparent",
+      "backgroundColor": "#ffec99",
       "fillStyle": "solid",
       "strokeWidth": 2,
       "strokeStyle": "solid",
@@ -25,11 +25,11 @@
         "type": 3
       },
       "seed": 975901867,
-      "version": 162,
-      "versionNonce": 1183878315,
+      "version": 163,
+      "versionNonce": 862246405,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1770526755611,
+      "updated": 1770526847925,
       "link": null,
       "locked": false
     },
@@ -112,7 +112,7 @@
     "gridSize": 20,
     "gridStep": 5,
     "gridModeEnabled": false,
-    "viewBackgroundColor": "#000"
+    "viewBackgroundColor": "00000"
   },
   "files": {}
 }
