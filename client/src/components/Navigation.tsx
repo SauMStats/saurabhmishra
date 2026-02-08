@@ -90,9 +90,9 @@ export default function Navigation() {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
-                <Link href="/teaching/courses" className="nav-dropdown-item" data-testid="link-teaching-courses">
+                {/* <Link href="/teaching/courses" className="nav-dropdown-item" data-testid="link-teaching-courses">
                   Courses
-                </Link>
+                </Link> */}
                 <Link href="/teaching/ta" className="nav-dropdown-item" data-testid="link-teaching-ta">
                   Teaching Assistant
                 </Link>
