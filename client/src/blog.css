@@ -1,0 +1,482 @@
+/* ========================================
+   Professional Blog Styling
+   ======================================== */
+
+/* Typography Enhancement */
+.blog-content {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #111827;
+}
+
+.blog-content h1 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.blog-content h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* First paragraph styling */
+.blog-content > p:first-of-type {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #1f2937;
+}
+
+/* Paragraph spacing */
+.blog-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Strong emphasis */
+.blog-content strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Italic emphasis */
+.blog-content em {
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Links */
+.blog-content a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+.blog-content a:hover {
+  color: #1d4ed8;
+  text-decoration-thickness: 2px;
+}
+
+/* Code Styling */
+.blog-content code {
+  font-family: 'Fira Code', 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  background-color: #f3f4f6;
+  border-radius: 0.25rem;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.blog-content pre {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #1e293b;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.blog-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Syntax highlighting colors */
+.blog-content pre code .keyword {
+  color: #c792ea;
+}
+
+.blog-content pre code .function {
+  color: #82aaff;
+}
+
+.blog-content pre code .string {
+  color: #c3e88d;
+}
+
+.blog-content pre code .comment {
+  color: #546e7a;
+  font-style: italic;
+}
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+}
+
+.blog-content li::marker {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.blog-content li > ul,
+.blog-content li > ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+.blog-content blockquote {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #2563eb;
+  background-color: #eff6ff;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: #1e40af;
+}
+
+.blog-content blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-content blockquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+  font-style: normal;
+  color: #3b82f6;
+}
+
+/* Horizontal Rules */
+.blog-content hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 2px solid #e5e7eb;
+}
+
+/* Math Equations */
+.MathJax {
+  font-size: 1.15em !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.blog-content .MathJax_Display {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  overflow-x: auto;
+}
+
+/* Inline math */
+.blog-content .MathJax {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Tables */
+.blog-content table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.blog-content thead {
+  background-color: #f3f4f6;
+}
+
+.blog-content th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 2px solid #d1d5db;
+}
+
+.blog-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.blog-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.blog-content tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Images */
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content figure {
+  margin: 2rem 0;
+}
+
+.blog-content figcaption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Special Callouts */
+.blog-content .callout {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid;
+}
+
+.blog-content .callout-info {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.blog-content .callout-warning {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.blog-content .callout-success {
+  background-color: #d1fae5;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+.blog-content .callout-error {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+/* Footnotes */
+.blog-content .footnote {
+  font-size: 0.85rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 3rem;
+  padding-top: 1rem;
+}
+
+/* Reading Progress Bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+  z-index: 1000;
+  transition: width 0.1s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styles */
+@media print {
+  .blog-content {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  .blog-content a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .blog-content pre {
+    border: 1px solid #000;
+    background-color: #f5f5f5;
+  }
+
+  .blog-content pre code {
+    color: #000;
+  }
+
+  .reading-progress,
+  .blog-nav,
+  .blog-footer {
+    display: none;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 1rem;
+  }
+
+  .blog-content h1 {
+    font-size: 2rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .blog-content pre {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .blog-content .MathJax_Display {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .blog-content table {
+    font-size: 0.875rem;
+  }
+
+  .blog-content th,
+  .blog-content td {
+    padding: 0.5rem;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .blog-content {
+    color: #e5e7eb;
+  }
+
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4 {
+    color: #f9fafb;
+  }
+
+  .blog-content strong {
+    color: #f9fafb;
+  }
+
+  .blog-content code {
+    background-color: #374151;
+    color: #fca5a5;
+  }
+
+  .blog-content blockquote {
+    background-color: #1e3a5f;
+    border-color: #3b82f6;
+    color: #bfdbfe;
+  }
+
+  .blog-content .MathJax_Display {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+
+  .blog-content table thead {
+    background-color: #374151;
+  }
+
+  .blog-content th {
+    color: #f9fafb;
+    border-color: #4b5563;
+  }
+
+  .blog-content td {
+    border-color: #374151;
+  }
+
+  .blog-content tbody tr:hover {
+    background-color: #1f2937;
+  }
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-content > * {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.blog-content > *:nth-child(1) { animation-delay: 0.1s; }
+.blog-content > *:nth-child(2) { animation-delay: 0.15s; }
+.blog-content > *:nth-child(3) { animation-delay: 0.2s; }
+.blog-content > *:nth-child(4) { animation-delay: 0.25s; }
+.blog-content > *:nth-child(5) { animation-delay: 0.3s; }
+
+/* Selection highlight */
+.blog-content ::selection {
+  background-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.blog-content ::-moz-selection {
+  background-color: #bfdbfe;
+  color: #1e40af;
+}

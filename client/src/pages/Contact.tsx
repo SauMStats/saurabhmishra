@@ -33,7 +33,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
                     <a href="mailto:saurabh.mishra@iith.ac.in" className="text-academic-blue hover:text-blue-700 transition-colors duration-200">
-                      saurabh.mishra@iith.ac.in
+                      saurabh.iith.stats@iith.ac.in
                     </a>
                   </div>
                 </div>
@@ -51,7 +51,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex items-center" data-testid="contact-phone">
+                {/* <div className="flex items-center" data-testid="contact-phone">
                   <Phone className="w-6 h-6 text-academic-blue mr-4" />
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Office Hours</h3>
@@ -61,11 +61,11 @@ export default function Contact() {
                       <span className="text-sm text-gray-500 dark:text-gray-400">(By appointment)</span>
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Social Links */}
-              <div>
+              {/* <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4" data-testid="text-social-heading">Connect Online</h3>
                 <div className="flex space-x-4">
                   <a 
@@ -90,7 +90,7 @@ export default function Contact() {
                     <Mail className="w-5 h-5 text-academic-blue" />
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               {/* Research Interests */}
               <div className="bg-academic-light dark:bg-gray-700 p-6 rounded-lg" data-testid="section-collaboration">
@@ -110,7 +110,7 @@ export default function Contact() {
         </div>
 
         {/* Additional Information */}
-        <section className="mt-16 bg-academic-light dark:bg-gray-800 rounded-xl p-8 border border-gray-100 dark:border-gray-700" data-testid="section-response-time">
+        {/* <section className="mt-16 bg-academic-light dark:bg-gray-800 rounded-xl p-8 border border-gray-100 dark:border-gray-700" data-testid="section-response-time">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Response Times & Availability</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
@@ -134,7 +134,7 @@ export default function Contact() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );
