@@ -89,7 +89,7 @@ export default function Sports() {
 
         {/* Current Activities */}
         <section className="mb-16" data-testid="section-current">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Current Activities</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Sports Activities</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Table Tennis */}
             <div className="bg-academic-light border-l-4 border-academic-blue p-6 rounded-r-lg">

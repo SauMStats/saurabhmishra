@@ -157,7 +157,7 @@ export default function BlogPost() {
             <div className="flex flex-wrap items-center gap-6 text-gray-500 mb-8" data-testid="blog-post-meta">
               <div className="flex items-center">
                 <User className="w-4 h-4 mr-2" />
-                <span>Dr. Sarah Chen</span>
+                <span>Saurabh Mishra</span>
               </div>
               <div className="flex items-center">
                 <Calendar className="w-4 h-4 mr-2" />
@@ -192,22 +192,21 @@ export default function BlogPost() {
         <footer className="mt-16 pt-8 border-t border-gray-200" data-testid="blog-post-footer">
           <div className="bg-academic-light rounded-xl p-8">
             <div className="flex items-start space-x-6">
-              <img 
+              {/* <img 
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
-                alt="Dr. Sarah Chen" 
+                alt="Saurabh Mishra" 
                 className="w-16 h-16 rounded-full object-cover"
                 data-testid="author-avatar"
-              />
+              /> */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">About the Author</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Dr. Sarah Chen is a PhD candidate in Computer Science at Stanford University, specializing in machine learning and AI ethics. 
-                  Her research focuses on developing interpretable and fair AI systems for healthcare and climate science applications.
+                  Saurabh Mishra is a PhD student in Mathematics working in statistical genetics, GWAS, TWAS, and gene–environment interactions.
                 </p>
                 <div className="mt-4">
                   <Link href="/bio">
                     <a className="text-academic-blue font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-author-bio">
-                      Learn more about Sarah →
+                      Learn more about Saurabh →
                     </a>
                   </Link>
                 </div>
