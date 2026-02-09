@@ -517,7 +517,89 @@ $$E[Y] = \\beta_0 + \\beta_{PRS} \\text{PRS} + \\beta_E E + \\beta_{PRS \\times 
 Gene-environment interactions represent a critical frontier in genomics, requiring sophisticated statistical methods and computational approaches. The integration of machine learning, improved environmental phenotyping, and causal inference methods will advance our understanding of how genetic and environmental factors jointly influence complex traits.
 
 Success in this field requires interdisciplinary collaboration between statisticians, geneticists, environmental scientists, and computer scientists to develop robust, scalable methods for detecting and characterizing these important biological phenomena.`
-  }
+  },
+  {
+  id: "5",
+  title: "Linear Regression Revisited: Theory, Estimation, and Practice",
+  slug: "linear-regression-theory-estimation-practice",
+  excerpt: "A concise but rigorous walkthrough of linear regression, covering theory, estimation, inference, and implementation.",
+  publishedAt: "2024-02-10",
+  readTime: "7 min read",
+  tags: ["Regression", "Statistics", "Theory"],
+  featured: true,
+  author: "Saurabh Mishra",
+  content: `
+# Linear Regression Revisited
+
+Linear regression is a cornerstone of statistical modeling, forming the foundation of many modern methods in genetics, econometrics, and machine learning.
+
+---
+
+## Model Specification
+
+We consider the classical linear model:
+
+$$
+\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\varepsilon},
+$$
+
+where $\\boldsymbol{\\varepsilon} \\sim \\mathcal{N}(0, \\sigma^2 \\mathbf{I})$.
+
+---
+
+## Ordinary Least Squares
+
+The OLS estimator minimizes the squared error:
+
+$$
+\\hat{\\boldsymbol{\\beta}}
+=
+\\arg\\min_{\\boldsymbol{\\beta}}
+\\| \\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta} \\|_2^2
+$$
+
+Solving yields the closed-form solution:
+
+$$
+\\boxed{
+\\hat{\\boldsymbol{\\beta}} =
+(\\mathbf{X}^\\top \\mathbf{X})^{-1} \\mathbf{X}^\\top \\mathbf{y}
+}
+$$
+
+---
+
+> **Theorem (Unbiasedness)**  
+> If $\\mathbb{E}[\\boldsymbol{\\varepsilon} \\mid \\mathbf{X}] = 0$, then  
+> $$
+> \\mathbb{E}[\\hat{\\boldsymbol{\\beta}}] = \\boldsymbol{\\beta}.
+> $$
+
+---
+
+## R Example
+
+\`\`\`r
+set.seed(42)
+
+n <- 100
+x <- rnorm(n)
+y <- 1 + 2 * x + rnorm(n, sd = 0.5)
+
+model <- lm(y ~ x)
+summary(model)
+\`\`\`
+
+---
+
+## Why This Matters
+
+Linear regression remains central to GWAS, TWAS, and causal inference. Understanding its assumptions and limitations is essential for correct scientific conclusions.
+
+---
+`
+}
+
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
@@ -525,8 +607,13 @@ export function getBlogPost(slug: string): BlogPost | undefined {
 }
 
 export function getAllBlogPosts(): BlogPost[] {
-  return blogPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+  return [...blogPosts].sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() -
+      new Date(a.publishedAt).getTime()
+  );
 }
+
 
 
 

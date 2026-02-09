@@ -317,7 +317,7 @@ export default function Blog() {
             {filteredPosts.map((post, index) => (
               <article 
                 key={post.id} 
-                className={`group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 ${
+                className={`group bg-white rounded-xl shadow-sm border border-gray-200 overflow-visible hover:shadow-xl transition-all duration-300 ${
                   post.featured ? 'ring-2 ring-blue-500 ring-offset-2' : ''
                 }`}
                 data-testid={`blog-post-${post.slug}`}
