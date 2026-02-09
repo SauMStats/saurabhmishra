@@ -110,20 +110,20 @@ export default function Navigation() {
               </button>
               <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
                 <Link href="/activities/sports" className="nav-dropdown-item" data-testid="link-activities-sports">
-                  Sports
+                  Fitness & Sports
                 </Link>
-                <Link href="/activities/movies" className="nav-dropdown-item" data-testid="link-activities-movies">
+                {/* <Link href="/activities/movies" className="nav-dropdown-item" data-testid="link-activities-movies">
                   Movies
-                </Link>
-                <Link href="/activities/books" className="nav-dropdown-item" data-testid="link-activities-books">
+                </Link> */}
+                {/* <Link href="/activities/books" className="nav-dropdown-item" data-testid="link-activities-books">
                   Books
-                </Link>
-                <Link href="/activities/exercise" className="nav-dropdown-item" data-testid="link-activities-exercise">
+                </Link> */}
+                {/* <Link href="/activities/exercise" className="nav-dropdown-item" data-testid="link-activities-exercise">
                   Exercise
-                </Link>
-                <Link href="/activities/gallery" className="nav-dropdown-item" data-testid="link-activities-gallery">
+                </Link> */}
+                {/* <Link href="/activities/gallery" className="nav-dropdown-item" data-testid="link-activities-gallery">
                   Photos
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -196,18 +196,18 @@ export default function Navigation() {
                 </button>
                 {mobileDropdowns.research && (
                   <div className="mt-2 ml-4 space-y-1">
-                    <Link href="/research/group" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-group">
+                    {/* <Link href="/research/group" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-group">
                       Research Group
-                    </Link>
+                    </Link> */}
                     <Link href="/research/talks" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-talks">
                       Talks
                     </Link>
                     <Link href="/research/publications" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-publications">
                       Publications
                     </Link>
-                    <Link href="/research/collaborators" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-collaborators">
+                    {/* <Link href="/research/collaborators" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-collaborators">
                       Collaborators
-                    </Link>
+                    </Link> */}
                   </div>
                 )}
               </div>
@@ -224,9 +224,9 @@ export default function Navigation() {
                 </button>
                 {mobileDropdowns.teaching && (
                   <div className="mt-2 ml-4 space-y-1">
-                    <Link href="/teaching/courses" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-teaching-courses">
+                    {/* <Link href="/teaching/courses" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-teaching-courses">
                       Courses
-                    </Link>
+                    </Link> */}
                     <Link href="/teaching/ta" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-teaching-ta">
                       Teaching Assistant
                     </Link>
@@ -247,20 +247,20 @@ export default function Navigation() {
                 {mobileDropdowns.activities && (
                   <div className="mt-2 ml-4 space-y-1">
                     <Link href="/activities/sports" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-sports">
-                      Sports
+                      Fitness & Sports
                     </Link>
-                    <Link href="/activities/movies" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-movies">
+                    {/* <Link href="/activities/movies" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-movies">
                       Movies
-                    </Link>
-                    <Link href="/activities/books" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-books">
+                    </Link> */}
+                    {/* <Link href="/activities/books" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-books">
                       Books
-                    </Link>
-                    <Link href="/activities/exercise" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-exercise">
+                    </Link> */}
+                    {/* <Link href="/activities/exercise" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-exercise">
                       Exercise
-                    </Link>
-                    <Link href="/activities/gallery" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-gallery">
+                    </Link> */}
+                    {/* <Link href="/activities/gallery" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-gallery">
                       Photos
-                    </Link>
+                    </Link> */}
                   </div>
                 )}
               </div>

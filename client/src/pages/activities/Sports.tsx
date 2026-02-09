@@ -1,4 +1,5 @@
-import { Trophy, Calendar, MapPin, Users, Target } from "lucide-react";
+import { Trophy, Calendar, MapPin, Users, Target, Dumbbell, Activity } from "lucide-react";
+
 
 export default function Sports() {
   return (
@@ -12,6 +13,79 @@ export default function Sports() {
             Maintaining physical fitness and enjoying sports at IIT Hyderabad
           </p>
         </div>
+
+        {/* ================= Gym & Strength Training (ADDED) ================= */}
+        <section className="mb-16" data-testid="section-gym">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-8">
+            Gym & Strength Training
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Gym Routine */}
+            <div className="bg-academic-light p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Dumbbell className="w-6 h-6 text-academic-blue mr-3" />
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Weekly Gym Routine
+                </h3>
+              </div>
+
+              <div className="space-y-3 text-sm text-gray-600">
+                <div className="flex justify-between">
+                  <span>Frequency</span>
+                  <span className="font-medium text-academic-blue">
+                    5 days / week
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Training Style</span>
+                  <span className="font-medium text-academic-blue">
+                    Push / Pull / Legs
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Session Duration</span>
+                  <span className="font-medium text-academic-blue">
+                    60–75 minutes
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Focus</span>
+                  <span className="font-medium text-academic-blue">
+                    Strength & consistency
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Personal Records */}
+            <div className="bg-academic-light p-6 rounded-xl">
+              <div className="flex items-center mb-4">
+                <Activity className="w-6 h-6 text-academic-blue mr-3" />
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Personal Records (PRs)
+                </h3>
+              </div>
+
+              <div className="space-y-4 text-sm text-gray-600">
+                <div className="flex justify-between">
+                  <span>🏋️ Squat</span>
+                  <span className="font-semibold text-academic-blue">110 kg</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>💪 Bench Press</span>
+                  <span className="font-semibold text-academic-blue">85 kg</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>🔩 Deadlift</span>
+                  <span className="font-semibold text-academic-blue">140 kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* ================= END ADDITION ================= */}
+        
 
         {/* Current Activities */}
         <section className="mb-16" data-testid="section-current">
@@ -38,7 +112,7 @@ export default function Sports() {
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Active member of the campus table tennis community. Participate in inter-department tournaments and evening practice sessions. Excellent for quick reflexes and stress relief after long research hours.
+                Active member of the campus table tennis community, participating in inter-department tournaments and regular practice sessions. The sport sharpens reflexes, improves focus, and serves as an effective stress reliever after long work hours.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Tournament Player</span>
@@ -50,60 +124,60 @@ export default function Sports() {
             {/* Running */}
             <div className="bg-white border border-gray-200 p-6 rounded-lg">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">Distance Running</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Running</h3>
                 <Trophy className="w-6 h-6 text-green-500" />
               </div>
               <div className="space-y-2 text-sm text-gray-600 mb-4">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Daily (morning runs)</span>
+                  <span>2-3x (morning runs)</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Stanford Dish Trail</span>
+                  <span>IITH Atheletics Track</span>
                 </div>
                 <div className="flex items-center">
                   <Target className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Marathon training</span>
+                  <span>Fitness</span>
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Regular morning runner averaging 40+ miles per week. Training for the 2024 Boston Marathon. Running helps clear my mind and generates some of my best research ideas.
+                I enjoy running and jogging 2–3 times a week to support my overall fitness and endurance.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">40+ mpw</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Marathon</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Trail Running</span>
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">5+ kmpw</span>
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Fitness</span>    {/* Marathon */}
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Running</span>
               </div>
             </div>
 
-            {/* Rock Climbing */}
+            {/* Badminton */}
             <div className="bg-white border border-gray-200 p-6 rounded-lg">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">Rock Climbing</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Badminton</h3>
                 <Trophy className="w-6 h-6 text-red-500" />
               </div>
               <div className="space-y-2 text-sm text-gray-600 mb-4">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>2x per week</span>
+                  <span>1-2x per week</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Planet Granite & Yosemite</span>
+                  <span>SNCC, IIT Hyderabad</span>
                 </div>
                 <div className="flex items-center">
                   <Target className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>5.10a/b grade</span>
+                  <span>Intermediate</span>
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Indoor and outdoor climbing enthusiast. Enjoy both bouldering and sport climbing. Weekend trips to Yosemite and other Bay Area crags. Climbing teaches problem-solving skills that transfer to research.
+                I enjoy the game for its high intensity and physical demand. I value the endurance, fast pace, and full-body workout that come with sustained rallies and constant movement. The game provides an excellent cardiovascular workout and a satisfying way to stay active and energized.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">5.10a/b</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Bouldering</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Outdoor</span>
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">High Intensity</span>
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Endurance</span>
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Indoor</span>
               </div>
             </div>
 
@@ -120,27 +194,27 @@ export default function Sports() {
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Stanford Aquatic Center</span>
+                  <span>SNCC, IIT Hyderabad</span>
                 </div>
                 <div className="flex items-center">
                   <Target className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Masters swimming</span>
+                  <span>Learning swimming</span>
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Member of Stanford Masters Swimming program. Focus on technique improvement and endurance training. Swimming provides excellent cross-training for running and overall fitness.
+                I use swimming as an alternative to morning running(when I skip), primarily to learn proper swimming techniques while maintaining fitness.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Masters</span>
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Learning</span>
                 <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Technique</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Endurance</span>
+                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Cross-Training</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* Achievements */}
-        <section className="mb-16" data-testid="section-achievements">
+        {/* <section className="mb-16" data-testid="section-achievements">
           <h2 className="text-2xl font-semibold text-gray-900 mb-8">Athletic Achievements</h2>
           <div className="space-y-6">
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
@@ -187,10 +261,10 @@ export default function Sports() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Team Involvement */}
-        <section className="mb-16" data-testid="section-teams">
+        {/* <section className="mb-16" data-testid="section-teams">
           <h2 className="text-2xl font-semibold text-gray-900 mb-8">Team Involvement</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white border border-gray-200 p-6 rounded-lg">
@@ -219,20 +293,17 @@ export default function Sports() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Sports Philosophy */}
         <section className="bg-academic-light rounded-xl p-8" data-testid="section-philosophy">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Sports & Research Balance</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Sports & Work Balance</h2> {/* Sports & Research Balance */}
           <div className="space-y-4 text-gray-600 leading-relaxed">
             <p>
-              Athletics play a crucial role in my academic success and overall well-being. Regular physical activity helps me maintain focus, manage stress, and approach research challenges with a clear mind.
+              Physical activity is an important part of my routine. It helps me stay grounded, manage stress, and maintain overall well-being. Whether it’s training for endurance or simply staying active, sports provide structure, balance, and a welcome reset from long days. I find that regular movement supports both physical health and mental clarity.
             </p>
             <p>
-              The discipline and goal-setting skills developed through sports training directly translate to my research methodology. Whether it's the persistence required for marathon training or the problem-solving approach needed in rock climbing, these activities complement and enhance my academic work.
-            </p>
-            <p>
-              I believe in the importance of work-life balance and encourage fellow graduate students to find physical activities they enjoy. The research community benefits when we take care of our physical and mental health.
+              I value a sustainable, balanced lifestyle and believe staying active makes everyday work more enjoyable and productive.
             </p>
           </div>
           
@@ -246,7 +317,7 @@ export default function Sports() {
               <div className="text-gray-600 text-sm">Active Sports</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
-              <div className="text-2xl font-bold text-academic-blue mb-2">6</div>
+              <div className="text-2xl font-bold text-academic-blue mb-2">4</div>
               <div className="text-gray-600 text-sm">Years Competing</div>
             </div>
           </div>
