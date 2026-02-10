@@ -619,7 +619,6 @@ Linear regression remains central to GWAS, TWAS, and causal inference. Understan
 }
 
 
-
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
