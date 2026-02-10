@@ -159,7 +159,7 @@
 import { Calendar, Clock, ArrowRight, Tag, Search } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useMemo } from "react";
-import { getAllBlogPosts, type BlogPost } from "../data/blog-posts";
+import { getAllBlogPosts, type BlogPost } from "@/data/blog-posts";  //"../data/blog-posts";
 
 export default function Blog() {
   const posts = getAllBlogPosts();

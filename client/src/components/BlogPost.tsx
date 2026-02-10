@@ -233,12 +233,18 @@
 
 
 
-
+import { getBlogPost, type BlogPost as BlogPostType } from "@/data/blog-posts";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 import { useParams, Link } from "wouter";
 import { Calendar, Clock, ArrowLeft, User, Tag } from "lucide-react";
 import { useEffect } from "react";
-import { getBlogPost, type BlogPost as BlogPostType } from "@/data/blog-posts";
-import MarkdownRenderer from "@/components/MarkdownRenderer";
+
+// import PDFViewer from "@/components/PDFViewer";
+import React, { lazy, Suspense } from "react";
+
+const PDFViewer = lazy(() => import("@/components/PDFViewer"));
+
+
 
 // declare global {
 //   interface Window {
@@ -362,11 +368,38 @@ export default function BlogPost() {
       </div>
 
       {/* Article Content */}
-      <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
+      {/* <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
         <div className="bg-white rounded-lg shadow-sm p-8 md:p-12" data-testid="blog-post-content">
           <MarkdownRenderer content={post.content} />
         </div>
-      </article>
+      </article> */}
+      <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
+          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12" data-testid="blog-post-content">
+            <MarkdownRenderer content={post.content} />
+
+            {/* PDF Viewer Section */}
+            {/* {typeof window !== "undefined" && post.pdf && (
+              <div className="mt-12">
+                <h2 className="text-xl font-semibold text-gray-900 mb-4">Attached PDF</h2>
+                <PDFViewer file={`/assets/${post.pdf}`} />
+              </div>
+            )} */}
+            {typeof window !== "undefined" && post.pdf && (
+              <Suspense fallback={
+                <div className="flex justify-center py-8">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                </div>
+              }>
+                <div className="mt-12">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Attached PDF</h2>
+                  <PDFViewer file={`/assets/${post.pdf}`} />
+                </div>
+              </Suspense>
+            )}
+          </div>
+        </article>
+
+
 
       {/* Article Footer */}
       <footer className="max-w-4xl mx-auto px-6 pb-16" data-testid="blog-post-footer">

@@ -11,7 +11,10 @@ export interface BlogPost {
   tags?: string[];          // optional
   featured?: boolean;       // optional
   author?: string;          // optional
+
+  pdf?: string;             // optional PDF filename
 }
+
 
 
 export const blogPosts: BlogPost[] = [
@@ -598,7 +601,24 @@ Linear regression remains central to GWAS, TWAS, and causal inference. Understan
 
 ---
 `
+},
+{
+  id: "6",
+  title: "Statistical Genetics Seminar",
+  slug: "statistical-genetics-seminar",
+  excerpt: "Seminar notes on statistical genetics with attached PDF.",
+  publishedAt: "2026-02-10",
+  readTime: "5 min read",
+  tags: ["Genetics", "Statistics"],
+  author: "Saurabh Mishra",
+  content: `# Statistical Genetics Seminar
+
+  This seminar covers advanced topics in statistical genetics...
+  `,
+  pdf: "ProgressSeminar4_5yr_v2-Final.pdf", // ✅ Just the filename
 }
+
+
 
 ];
 
