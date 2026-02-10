@@ -392,7 +392,8 @@ export default function BlogPost() {
               }>
                 <div className="mt-12">
                   <h2 className="text-xl font-semibold text-gray-900 mb-4">Attached PDF</h2>
-                  <PDFViewer file={`/assets/${post.pdf}`} />
+                  {/* <PDFViewer file={`/assets/${post.pdf}`} /> */}
+                  <PDFViewer file={`${import.meta.env.BASE_URL}assets/${post.pdf}`} />
                 </div>
               </Suspense>
             )}
