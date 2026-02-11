@@ -230,27 +230,233 @@
 // }
 
 
+////////////////////////////////////
+// This is the worked one with PDF
+////////////////////////////////////
+
+// import { getBlogPost, type BlogPost as BlogPostType } from "@/data/blog-posts";
+// import MarkdownRenderer from "@/components/MarkdownRenderer";
+// import { useParams, Link } from "wouter";
+// import { Calendar, Clock, ArrowLeft, User, Tag } from "lucide-react";
+// import { useEffect } from "react";
+
+// // import PDFViewer from "@/components/PDFViewer";
+// import React, { lazy, Suspense } from "react";
+
+// const PDFViewer = lazy(() => import("@/components/PDFViewer"));
 
 
 
+// // declare global {
+// //   interface Window {
+// //     MathJax: any;
+// //   }
+// // }
+
+// export default function BlogPost() {
+//   const params = useParams();
+//   const slug = params.slug;
+
+//   const post = slug ? getBlogPost(slug) : undefined;
+//   const isLoading = false;
+//   const error = !post && slug;
+
+//   useEffect(() => {
+//     // Scroll to top when post loads
+//     window.scrollTo(0, 0);
+//   }, [post]);
+
+//   if (isLoading) {
+//     return (
+//       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+//         <div className="max-w-4xl mx-auto px-6">
+//           <div className="flex justify-center">
+//             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600" data-testid="loading-spinner"></div>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   if (error || !post) {
+//     return (
+//       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+//         <div className="max-w-4xl mx-auto px-6">
+//           <div className="text-center">
+//             <h1 className="text-3xl font-bold text-gray-900 mb-4" data-testid="text-error-heading">
+//               Blog Post Not Found
+//             </h1>
+//             <p className="text-gray-600 mb-8" data-testid="text-error-message">
+//               The blog post you're looking for doesn't exist or has been moved.
+//             </p>
+//             <Link href="/blog">
+//               <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-back-to-blog">
+//                 <ArrowLeft className="w-4 h-4 mr-2" />
+//                 Back to Blog
+//               </a>
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+//       {/* Hero Section */}
+//       <div className="bg-white border-b border-gray-200">
+//         <div className="max-w-4xl mx-auto px-6 py-12">
+//           {/* Back to Blog Link */}
+//           <div className="mb-8">
+//             <Link href="/blog">
+//               <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 group" data-testid="link-back-to-blog">
+//                 <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+//                 Back to Blog
+//               </a>
+//             </Link>
+//           </div>
+
+//           {/* Article Header */}
+//           <header>
+//             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 leading-snug">
+//               {post.title}
+//             </h1>
+            
+//             <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8" data-testid="blog-post-meta">
+//               <div className="flex items-center">
+//                 <User className="w-4 h-4 mr-2 text-gray-400" />
+//                 <span className="font-medium">{post.author || 'Saurabh Mishra'}</span>
+//               </div>
+//               <div className="flex items-center">
+//                 <Calendar className="w-4 h-4 mr-2 text-gray-400" />
+//                 <time dateTime={new Date(post.publishedAt).toISOString()}>
+//                   {new Date(post.publishedAt).toLocaleDateString('en-US', {
+//                     year: 'numeric',
+//                     month: 'long',
+//                     day: 'numeric'
+//                   })}
+//                 </time>
+//               </div>
+//               <div className="flex items-center">
+//                 <Clock className="w-4 h-4 mr-2 text-gray-400" />
+//                 <span>{post.readTime}</span>
+//               </div>
+//             </div>
+
+//             {/* Tags */}
+//             {post.tags && post.tags.length > 0 && (
+//               <div className="flex flex-wrap gap-2 mb-8">
+//                 {post.tags.map(tag => (
+//                   <span 
+//                     key={tag}
+//                     className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+//                   >
+//                     <Tag className="w-3 h-3 mr-1" />
+//                     {tag}
+//                   </span>
+//                 ))}
+//               </div>
+//             )}
+
+//             {/* Excerpt */}
+//             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg" data-testid="blog-post-excerpt">
+//               <p className="text-lg text-gray-700 leading-relaxed italic">
+//                 {post.excerpt}
+//               </p>
+//             </div>
+//           </header>
+//         </div>
+//       </div>
+
+//       {/* Article Content */}
+//       {/* <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
+//         <div className="bg-white rounded-lg shadow-sm p-8 md:p-12" data-testid="blog-post-content">
+//           <MarkdownRenderer content={post.content} />
+//         </div>
+//       </article> */}
+//       <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
+//           <div className="bg-white rounded-lg shadow-sm p-8 md:p-12" data-testid="blog-post-content">
+//             <MarkdownRenderer content={post.content} />
+
+//             {/* PDF Viewer Section */}
+//             {/* {typeof window !== "undefined" && post.pdf && (
+//               <div className="mt-12">
+//                 <h2 className="text-xl font-semibold text-gray-900 mb-4">Attached PDF</h2>
+//                 <PDFViewer file={`/assets/${post.pdf}`} />
+//               </div>
+//             )} */}
+//             {typeof window !== "undefined" && post.pdf && (
+//               <Suspense fallback={
+//                 <div className="flex justify-center py-8">
+//                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+//                 </div>
+//               }>
+//                 <div className="mt-12">
+//                   <h2 className="text-xl font-semibold text-gray-900 mb-4">Attached PDF</h2>
+//                   {/* <PDFViewer file={`/assets/${post.pdf}`} /> */}
+//                   <PDFViewer file={`${import.meta.env.BASE_URL}assets/${post.pdf}`} />
+//                 </div>
+//               </Suspense>
+//             )}
+//           </div>
+//         </article>
+
+
+
+//       {/* Article Footer */}
+//       <footer className="max-w-4xl mx-auto px-6 pb-16" data-testid="blog-post-footer">
+//         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 shadow-sm border border-blue-100">
+//           <div className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-6">
+//             <div className="flex-shrink-0">
+//               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+//                 SM
+//               </div>
+//             </div>
+//             <div className="flex-1">
+//               <h3 className="text-xl font-semibold text-gray-900 mb-2">About the Author</h3>
+//               <p className="text-gray-700 leading-relaxed mb-4">
+//                 Saurabh Mishra is a PhD student in Mathematics working in statistical genetics, 
+//                 genome-wide association studies (GWAS), transcriptome-wide association studies (TWAS), 
+//                 and gene–environment interactions.
+//               </p>
+//               <Link href="/bio">
+//                 <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 group" data-testid="link-author-bio">
+//                   Learn more about Saurabh
+//                   <ArrowLeft className="w-4 h-4 ml-2 rotate-180 group-hover:translate-x-1 transition-transform" />
+//                 </a>
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Navigation */}
+//         <div className="mt-12 text-center">
+//           <Link href="/blog">
+//             <a className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5" data-testid="button-more-posts">
+//               <ArrowLeft className="w-4 h-4 mr-2" />
+//               More Blog Posts
+//             </a>
+//           </Link>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// }
+
+
+
+
+////////////// TRYING FOR MULTIPLE PDFs and IMAGES //////////////////
+
+import { useParams, Link } from "wouter";
+import { Calendar, Clock, ArrowLeft, User, Tag, FileText } from "lucide-react";
+import { useEffect } from "react";
 import { getBlogPost, type BlogPost as BlogPostType } from "@/data/blog-posts";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
-import { useParams, Link } from "wouter";
-import { Calendar, Clock, ArrowLeft, User, Tag } from "lucide-react";
-import { useEffect } from "react";
 
-// import PDFViewer from "@/components/PDFViewer";
 import React, { lazy, Suspense } from "react";
 
 const PDFViewer = lazy(() => import("@/components/PDFViewer"));
-
-
-
-// declare global {
-//   interface Window {
-//     MathJax: any;
-//   }
-// }
 
 export default function BlogPost() {
   const params = useParams();
@@ -261,7 +467,6 @@ export default function BlogPost() {
   const error = !post && slug;
 
   useEffect(() => {
-    // Scroll to top when post loads
     window.scrollTo(0, 0);
   }, [post]);
 
@@ -300,12 +505,14 @@ export default function BlogPost() {
     );
   }
 
+  // Determine which PDFs to show
+  const pdfsToShow = post.pdfs || (post.pdf ? [{ title: "Attached Document", filename: post.pdf }] : []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-6 py-12">
-          {/* Back to Blog Link */}
           <div className="mb-8">
             <Link href="/blog">
               <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 group" data-testid="link-back-to-blog">
@@ -315,7 +522,6 @@ export default function BlogPost() {
             </Link>
           </div>
 
-          {/* Article Header */}
           <header>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 leading-snug">
               {post.title}
@@ -363,44 +569,57 @@ export default function BlogPost() {
                 {post.excerpt}
               </p>
             </div>
+
+            {/* PDF badges if present */}
+            {pdfsToShow.length > 0 && (
+              <div className="mt-6 flex flex-wrap gap-2">
+                {pdfsToShow.map((pdf, idx) => (
+                  <div key={idx} className="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                    <FileText className="w-3 h-3 mr-1" />
+                    {pdf.title}
+                  </div>
+                ))}
+              </div>
+            )}
           </header>
         </div>
       </div>
 
       {/* Article Content */}
-      {/* <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
+      <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
         <div className="bg-white rounded-lg shadow-sm p-8 md:p-12" data-testid="blog-post-content">
           <MarkdownRenderer content={post.content} />
-        </div>
-      </article> */}
-      <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
-          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12" data-testid="blog-post-content">
-            <MarkdownRenderer content={post.content} />
 
-            {/* PDF Viewer Section */}
-            {/* {typeof window !== "undefined" && post.pdf && (
-              <div className="mt-12">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">Attached PDF</h2>
-                <PDFViewer file={`/assets/${post.pdf}`} />
+          {/* PDF Viewer Section - Multiple PDFs Support */}
+          {typeof window !== "undefined" && pdfsToShow.length > 0 && (
+            <Suspense fallback={
+              <div className="flex justify-center py-8">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
               </div>
-            )} */}
-            {typeof window !== "undefined" && post.pdf && (
-              <Suspense fallback={
-                <div className="flex justify-center py-8">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-                </div>
-              }>
-                <div className="mt-12">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Attached PDF</h2>
-                  {/* <PDFViewer file={`/assets/${post.pdf}`} /> */}
-                  <PDFViewer file={`${import.meta.env.BASE_URL}assets/${post.pdf}`} />
-                </div>
-              </Suspense>
-            )}
-          </div>
-        </article>
-
-
+            }>
+              <div className="mt-16 space-y-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-gray-200">
+                  Attached Documents
+                </h2>
+                {pdfsToShow.map((pdf, index) => (
+                  <div key={index} className="pdf-section">
+                    {/* <PDFViewer 
+                      file={`/assets/${pdf.filename}`}
+                      title={pdf.title}
+                      height="600px"
+                    /> */}
+                    <PDFViewer 
+                      file={`${import.meta.env.BASE_URL}assets/${pdf.filename}`}
+                      title={pdf.title}
+                      height="600px"
+                    />
+                  </div>
+                ))}
+              </div>
+            </Suspense>
+          )}
+        </div>
+      </article>
 
       {/* Article Footer */}
       <footer className="max-w-4xl mx-auto px-6 pb-16" data-testid="blog-post-footer">
@@ -428,7 +647,6 @@ export default function BlogPost() {
           </div>
         </div>
 
-        {/* Navigation */}
         <div className="mt-12 text-center">
           <Link href="/blog">
             <a className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5" data-testid="button-more-posts">
@@ -441,156 +659,3 @@ export default function BlogPost() {
     </div>
   );
 }
-
-
-// import { useParams, Link } from "wouter";
-// import { Calendar, Clock, ArrowLeft, User, Tag } from "lucide-react";
-// import { useEffect } from "react";
-// import { getBlogPost, type BlogPost as BlogPostType } from "@/data/blog-posts";
-// import MarkdownRenderer from "@/components/MarkdownRenderer";
-
-// export default function BlogPost() {
-//   const params = useParams<{ slug: string }>();
-//   const slug = params.slug;
-
-//   const post: BlogPostType | undefined = slug
-//     ? getBlogPost(slug)
-//     : undefined;
-
-//   const isLoading = false;
-//   const error = !post && slug;
-
-//   // Scroll to top when post loads
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//   }, [post]);
-
-//   if (isLoading) {
-//     return (
-//       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
-//         <div className="max-w-4xl mx-auto px-6 flex justify-center">
-//           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600" />
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   if (error || !post) {
-//     return (
-//       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
-//         <div className="max-w-4xl mx-auto px-6 text-center">
-//           <h1 className="text-3xl font-bold text-gray-900 mb-4">
-//             Blog Post Not Found
-//           </h1>
-//           <p className="text-gray-600 mb-8">
-//             The blog post you're looking for doesn't exist or has been moved.
-//           </p>
-//           <Link href="/blog">
-//             <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700">
-//               <ArrowLeft className="w-4 h-4 mr-2" />
-//               Back to Blog
-//             </a>
-//           </Link>
-//         </div>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-//       {/* Header */}
-//       <div className="bg-white border-b border-gray-200">
-//         <div className="max-w-4xl mx-auto px-6 py-12">
-//           <div className="mb-8">
-//             <Link href="/blog">
-//               <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700">
-//                 <ArrowLeft className="w-4 h-4 mr-2" />
-//                 Back to Blog
-//               </a>
-//             </Link>
-//           </div>
-
-//           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-//             {post.title}
-//           </h1>
-
-//           <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
-//             <div className="flex items-center">
-//               <User className="w-4 h-4 mr-2 text-gray-400" />
-//               <span>{post.author || "Saurabh Mishra"}</span>
-//             </div>
-
-//             <div className="flex items-center">
-//               <Calendar className="w-4 h-4 mr-2 text-gray-400" />
-//               <time dateTime={new Date(post.publishedAt).toISOString()}>
-//                 {new Date(post.publishedAt).toLocaleDateString("en-US", {
-//                   year: "numeric",
-//                   month: "long",
-//                   day: "numeric",
-//                 })}
-//               </time>
-//             </div>
-
-//             <div className="flex items-center">
-//               <Clock className="w-4 h-4 mr-2 text-gray-400" />
-//               <span>{post.readTime}</span>
-//             </div>
-//           </div>
-
-//           {post.tags?.length > 0 && (
-//             <div className="flex flex-wrap gap-2 mb-8">
-//               {post.tags.map((tag) => (
-//                 <span
-//                   key={tag}
-//                   className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
-//                 >
-//                   <Tag className="w-3 h-3 mr-1" />
-//                   {tag}
-//                 </span>
-//               ))}
-//             </div>
-//           )}
-
-//           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
-//             <p className="text-lg text-gray-700 italic">
-//               {post.excerpt}
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Content */}
-//       <article className="max-w-4xl mx-auto px-6 py-12">
-//         <div className="bg-white rounded-lg shadow-sm p-8 md:p-12">
-//           <MarkdownRenderer content={post.content} />
-//         </div>
-//       </article>
-
-//       {/* Footer */}
-//       <footer className="max-w-4xl mx-auto px-6 pb-16">
-//         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
-//           <div className="flex items-start space-x-6">
-//             <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
-//               SM
-//             </div>
-//             <div>
-//               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-//                 About the Author
-//               </h3>
-//               <p className="text-gray-700 mb-4">
-//                 Saurabh Mishra is a PhD student in Mathematics working in
-//                 statistical genetics, GWAS, TWAS, and gene–environment
-//                 interactions.
-//               </p>
-//               <Link href="/bio">
-//                 <a className="text-blue-600 font-medium hover:text-blue-700">
-//                   Learn more about Saurabh →
-//                 </a>
-//               </Link>
-//             </div>
-//           </div>
-//         </div>
-//       </footer>
-//     </div>
-//   );
-// }

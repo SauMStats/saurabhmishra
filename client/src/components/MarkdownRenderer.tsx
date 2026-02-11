@@ -393,11 +393,76 @@
 
 
 
+/// Working with PDFs properly
+
+
+// import React from "react";
+// import ReactMarkdown from "react-markdown";
+// import remarkMath from "remark-math";
+// import rehypeKatex from "rehype-katex";
+
+// import "katex/dist/katex.min.css";
+
+// interface MarkdownRendererProps {
+//   content: string;
+//   className?: string;
+// }
+
+// export default function MarkdownRenderer({
+//   content,
+//   className = "",
+// }: MarkdownRendererProps) {
+//   return (
+//     <div className={`prose prose-lg max-w-none ${className}`}>
+//       <ReactMarkdown
+//         remarkPlugins={[remarkMath]}
+//         rehypePlugins={[rehypeKatex]}
+//         components={{
+//           h1: ({ ...props }) => (
+//             <h1 className="text-4xl font-bold mt-10 mb-6" {...props} />
+//           ),
+//           h2: ({ ...props }) => (
+//             <h2 className="text-3xl font-semibold mt-8 mb-5" {...props} />
+//           ),
+//           h3: ({ ...props }) => (
+//             <h3 className="text-2xl font-semibold mt-6 mb-4" {...props} />
+//           ),
+//           p: ({ ...props }) => (
+//             <p className="leading-relaxed mb-5 text-gray-700" {...props} />
+//           ),
+//           code({ inline, children, ...props }) {
+//             if (inline) {
+//               return (
+//                 <code className="px-1 py-0.5 bg-gray-100 rounded text-red-600">
+//                   {children}
+//                 </code>
+//               );
+//             }
+//             return (
+//               <pre className="my-6 bg-gray-900 rounded-lg overflow-x-auto">
+//                 <code className="block p-6 text-gray-100">
+//                   {children}
+//                 </code>
+//               </pre>
+//             );
+//           },
+//         }}
+//       >
+//         {content}
+//       </ReactMarkdown>
+//     </div>
+//   );
+// }
+
+
+
+//// For Image support and multiple PDF support
 
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import remarkGfm from "remark-gfm";
 
 import "katex/dist/katex.min.css";
 
@@ -413,37 +478,119 @@ export default function MarkdownRenderer({
   return (
     <div className={`prose prose-lg max-w-none ${className}`}>
       <ReactMarkdown
-        remarkPlugins={[remarkMath]}
+        remarkPlugins={[remarkMath, remarkGfm]}
         rehypePlugins={[rehypeKatex]}
         components={{
           h1: ({ ...props }) => (
-            <h1 className="text-4xl font-bold mt-10 mb-6" {...props} />
+            <h1 className="text-4xl font-bold mt-10 mb-6 text-gray-900 leading-tight" {...props} />
           ),
           h2: ({ ...props }) => (
-            <h2 className="text-3xl font-semibold mt-8 mb-5" {...props} />
+            <h2 className="text-3xl font-semibold mt-8 mb-5 text-gray-900 leading-tight" {...props} />
           ),
           h3: ({ ...props }) => (
-            <h3 className="text-2xl font-semibold mt-6 mb-4" {...props} />
+            <h3 className="text-2xl font-semibold mt-6 mb-4 text-gray-900 leading-snug" {...props} />
+          ),
+          h4: ({ ...props }) => (
+            <h4 className="text-xl font-semibold mt-5 mb-3 text-gray-900 leading-snug" {...props} />
           ),
           p: ({ ...props }) => (
-            <p className="leading-relaxed mb-5 text-gray-700" {...props} />
+            <p className="leading-relaxed mb-5 text-lg text-gray-700" {...props} />
           ),
-          code({ inline, children, ...props }) {
+          // Enhanced image support
+          img: ({ src, alt, title, ...props }) => (
+            <figure className="my-8">
+              <img 
+                src={src} 
+                alt={alt || ''} 
+                className="max-w-full h-auto rounded-lg shadow-md mx-auto hover:shadow-lg transition-shadow duration-300"
+                loading="lazy"
+                {...props}
+              />
+              {title && (
+                <figcaption className="text-center text-sm text-gray-600 mt-3 italic">
+                  {title}
+                </figcaption>
+              )}
+            </figure>
+          ),
+          // Bold text
+          strong: ({ ...props }) => (
+            <strong className="font-bold text-gray-900" {...props} />
+          ),
+          // Italic text
+          em: ({ ...props }) => (
+            <em className="italic text-gray-700" {...props} />
+          ),
+          // Links
+          a: ({ href, children, ...props }) => (
+            <a 
+              href={href} 
+              className="text-blue-600 hover:text-blue-800 underline transition-colors"
+              target={href?.startsWith('http') ? '_blank' : undefined}
+              rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+              {...props}
+            >
+              {children}
+            </a>
+          ),
+          // Code blocks
+          code({ inline, children, className, ...props }) {
             if (inline) {
               return (
-                <code className="px-1 py-0.5 bg-gray-100 rounded text-red-600">
+                <code className="px-2 py-1 bg-gray-100 rounded text-red-600 text-sm font-mono" {...props}>
                   {children}
                 </code>
               );
             }
+            const match = /language-(\w+)/.exec(className || '');
+            const language = match ? match[1] : '';
+            
             return (
               <pre className="my-6 bg-gray-900 rounded-lg overflow-x-auto">
-                <code className="block p-6 text-gray-100">
+                <code className={`block p-6 text-sm text-gray-100 leading-relaxed ${className || ''}`} {...props}>
                   {children}
                 </code>
               </pre>
             );
           },
+          // Blockquotes
+          blockquote: ({ ...props }) => (
+            <blockquote 
+              className="my-6 pl-6 border-l-4 border-blue-500 italic text-gray-700 bg-blue-50 py-4 pr-4 rounded-r-lg"
+              {...props}
+            />
+          ),
+          // Unordered lists
+          ul: ({ ...props }) => (
+            <ul className="my-6 space-y-2 list-disc list-outside ml-6" {...props} />
+          ),
+          // Ordered lists
+          ol: ({ ...props }) => (
+            <ol className="my-6 space-y-2 list-decimal list-outside ml-6" {...props} />
+          ),
+          // List items
+          li: ({ ...props }) => (
+            <li className="text-gray-700 leading-relaxed pl-2" {...props} />
+          ),
+          // Horizontal rule
+          hr: ({ ...props }) => (
+            <hr className="my-8 border-t-2 border-gray-200" {...props} />
+          ),
+          // Tables
+          table: ({ ...props }) => (
+            <div className="overflow-x-auto my-6">
+              <table className="min-w-full border-collapse border border-gray-300" {...props} />
+            </div>
+          ),
+          thead: ({ ...props }) => (
+            <thead className="bg-gray-100" {...props} />
+          ),
+          th: ({ ...props }) => (
+            <th className="border border-gray-300 px-4 py-2 text-left font-semibold" {...props} />
+          ),
+          td: ({ ...props }) => (
+            <td className="border border-gray-300 px-4 py-2" {...props} />
+          ),
         }}
       >
         {content}

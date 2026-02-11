@@ -12,7 +12,21 @@ export interface BlogPost {
   featured?: boolean;       // optional
   author?: string;          // optional
 
-  pdf?: string;             // optional PDF filename
+  // PDF support - can be single PDF or multiple PDFs
+  pdf?: string;             // Single PDF filename (legacy support)
+  pdfs?: {                  // Multiple PDFs with titles
+    title: string;
+    filename: string;
+  }[];
+
+  // Image support
+  images?: {
+    url: string;            // Path to image (e.g., "/assets/images/figure1.png")
+    alt: string;            // Alt text for accessibility
+    caption?: string;       // Optional caption
+    width?: string;         // Optional width (e.g., "600px", "100%", "50%")
+    position?: 'inline' | 'full-width' | 'center';  // How to display
+  }[];
 }
 
 
@@ -615,7 +629,7 @@ Linear regression remains central to GWAS, TWAS, and causal inference. Understan
 
   This seminar covers advanced topics in statistical genetics...
   `,
-  pdf: "ProgressSeminar4_5yr_v2-Final.pdf", // ✅ Just the filename
+  pdf: "BioInterpret_T2D_MainText.pdf", // ✅ Just the filename
 }
 
 
@@ -634,6 +648,21 @@ export function getAllBlogPosts(): BlogPost[] {
 }
 
 
+export function getBlogPostsByTag(tag: string): BlogPost[] {
+  return blogPosts.filter(post => post.tags?.includes(tag));
+}
+
+export function getFeaturedPosts(): BlogPost[] {
+  return blogPosts.filter(post => post.featured);
+}
+
+export function getAllTags(): string[] {
+  const tags = new Set<string>();
+  blogPosts.forEach(post => {
+    post.tags?.forEach(tag => tags.add(tag));
+  });
+  return Array.from(tags).sort();
+}
 
 
 
