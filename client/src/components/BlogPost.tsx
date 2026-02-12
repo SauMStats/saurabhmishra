@@ -446,7 +446,7 @@
 
 
 
-////////////// TRYING FOR MULTIPLE PDFs and IMAGES //////////////////
+////////////// TRYING FOR MULTIPLE PDFs and IMAGES ////////////////// (Working)
 
 import { useParams, Link } from "wouter";
 import { Calendar, Clock, ArrowLeft, User, Tag, FileText } from "lucide-react";
@@ -571,7 +571,7 @@ export default function BlogPost() {
             </div>
 
             {/* PDF badges if present */}
-            {pdfsToShow.length > 0 && (
+            {/* {pdfsToShow.length > 0 && (
               <div className="mt-6 flex flex-wrap gap-2">
                 {pdfsToShow.map((pdf, idx) => (
                   <div key={idx} className="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
@@ -580,7 +580,7 @@ export default function BlogPost() {
                   </div>
                 ))}
               </div>
-            )}
+            )} */}
           </header>
         </div>
       </div>
