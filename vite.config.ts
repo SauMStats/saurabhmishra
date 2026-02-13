@@ -43,11 +43,14 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import markdownBlogPlugin from "./client/src/plugins/vite-plugin-markdown-blog";
 
 export default defineConfig({
   base: "/saurabhmishra/",
   plugins: [
+    markdownBlogPlugin(),  // The plugin for blog 12th feb
     react(),
+    // markdownBlogPlugin(),  // The plugin for blog 12th feb
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined

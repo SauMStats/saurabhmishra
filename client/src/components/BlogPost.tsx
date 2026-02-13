@@ -456,6 +456,9 @@ import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 import React, { lazy, Suspense } from "react";
 
+import { getSeriesNavigation } from "@/lib/blog-content-loader";
+import SeriesNavigation from "@/components/SeriesNavigation";
+
 const PDFViewer = lazy(() => import("@/components/PDFViewer"));
 
 export default function BlogPost() {
@@ -463,6 +466,7 @@ export default function BlogPost() {
   const slug = params.slug;
 
   const post = slug ? getBlogPost(slug) : undefined;
+  const seriesNav = post ? getSeriesNavigation(post) : null;
   const isLoading = false;
   const error = !post && slug;
 

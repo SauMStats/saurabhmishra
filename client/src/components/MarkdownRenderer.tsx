@@ -476,7 +476,8 @@ export default function MarkdownRenderer({
   className = "",
 }: MarkdownRendererProps) {
   return (
-    <div className={`prose prose-lg max-w-none ${className}`}>
+    // <div className={`prose prose-lg max-w-none ${className}`}>
+    <div className={`max-w-none ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkMath, remarkGfm]}
         rehypePlugins={[rehypeKatex]}
@@ -534,25 +535,97 @@ export default function MarkdownRenderer({
             </a>
           ),
           // Code blocks
-          code({ inline, children, className, ...props }) {
-            if (inline) {
-              return (
-                <code className="px-2 py-1 bg-gray-100 rounded text-red-600 text-sm font-mono" {...props}>
-                  {children}
-                </code>
-              );
-            }
-            const match = /language-(\w+)/.exec(className || '');
-            const language = match ? match[1] : '';
+          // code({ inline, children, className, ...props }) {
+          //   if (inline) {
+          //     return (
+          //       <code className="px-2 py-1 bg-gray-100 rounded text-red-600 text-sm font-mono" {...props}>
+          //         {children}
+          //       </code>
+          //     );
+          //   }
+          //   const match = /language-(\w+)/.exec(className || '');
+          //   const language = match ? match[1] : '';
             
-            return (
-              <pre className="my-6 bg-gray-900 rounded-lg overflow-x-auto">
-                <code className={`block p-6 text-sm text-gray-100 leading-relaxed ${className || ''}`} {...props}>
-                  {children}
-                </code>
-              </pre>
-            );
-          },
+          //   return (
+          //     <pre className="my-6 bg-gray-900 rounded-lg overflow-x-auto">
+          //       <code className={`block p-6 text-sm text-gray-100 leading-relaxed ${className || ''}`} {...props}>
+          //         {children}
+          //       </code>
+          //     </pre>
+          //   );
+          // },
+          // code({ inline, children, className, ...props }) {
+          //       if (inline) {
+          //         return (
+          //           <code
+          //             className="px-1.5 py-0.5 bg-slate-100 rounded-md text-red-600 text-sm font-mono"
+          //             {...props}
+          //           >
+          //             {children}
+          //           </code>
+          //         );
+          //       }
+
+          //       return (
+          //         <pre className="my-6 overflow-x-auto">
+          //           <code
+          //             className={`block rounded-xl bg-slate-50 border border-slate-200 
+          //                         p-6 text-sm text-slate-800 leading-relaxed font-mono`}
+          //             {...props}
+          //           >
+          //             {children}
+          //           </code>
+          //         </pre>
+          //       );
+          //     },
+
+            code(props) {
+              const { children } = props as any;
+              const inline = (props as any).inline;
+
+              const [copied, setCopied] = React.useState(false);
+
+              if (inline) {
+                return (
+                  <code className="px-1.5 py-0.5 bg-slate-100 rounded-md text-red-600 text-sm font-mono">
+                    {children}
+                  </code>
+                );
+              }
+
+              const codeText = String(children).replace(/\n$/, "");
+
+              const handleCopy = async () => {
+                await navigator.clipboard.writeText(codeText);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 1500);
+              };
+
+              return (
+                <div className="relative my-6 group">
+                  <button
+                    onClick={handleCopy}
+                    className="absolute top-2 right-2 text-xs
+                              text-slate-400 hover:text-slate-700
+                              opacity-0 group-hover:opacity-100 transition"
+                  >
+                    {copied ? "✓ Copied" : "Copy"}
+                  </button>
+
+                  <pre className="overflow-x-auto">
+                    <code
+                      className="block rounded-xl bg-slate-50 border border-slate-200 
+                                p-6 text-sm text-slate-800 leading-relaxed font-mono"
+                    >
+                      {children}
+                    </code>
+                  </pre>
+                </div>
+              );
+            },
+
+
+          
           // Blockquotes
           blockquote: ({ ...props }) => (
             <blockquote 
