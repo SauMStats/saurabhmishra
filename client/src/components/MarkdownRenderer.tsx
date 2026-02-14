@@ -458,13 +458,19 @@
 
 //// For Image support and multiple PDF support
 
-import React from "react";
+// import React from "react";
+import React, { lazy, Suspense } from "react"; // ← ADD lazy and Suspense
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw"; // ← ADD THIS (while adding GIF support)
 
 import "katex/dist/katex.min.css";
+
+
+// Lazy load PDF viewer
+const PDFViewer = lazy(() => import("./PDFViewer"));
 
 interface MarkdownRendererProps {
   content: string;
@@ -480,7 +486,7 @@ export default function MarkdownRenderer({
     <div className={`max-w-none ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkMath, remarkGfm]}
-        rehypePlugins={[rehypeKatex]}
+        rehypePlugins={[rehypeKatex, rehypeRaw]}
         components={{
           h1: ({ ...props }) => (
             <h1 className="text-4xl font-bold mt-10 mb-6 text-gray-900 leading-tight" {...props} />
@@ -497,23 +503,146 @@ export default function MarkdownRenderer({
           p: ({ ...props }) => (
             <p className="leading-relaxed mb-5 text-lg text-gray-700" {...props} />
           ),
-          // Enhanced image support
-          img: ({ src, alt, title, ...props }) => (
-            <figure className="my-8">
-              <img 
-                src={src} 
-                alt={alt || ''} 
-                className="max-w-full h-auto rounded-lg shadow-md mx-auto hover:shadow-lg transition-shadow duration-300"
-                loading="lazy"
-                {...props}
-              />
-              {title && (
-                <figcaption className="text-center text-sm text-gray-600 mt-3 italic">
-                  {title}
-                </figcaption>
-              )}
-            </figure>
-          ),
+          // // Enhanced image support
+          // img: ({ src, alt, title, ...props }) => (
+          //   <figure className="my-8">
+          //     <img 
+          //       src={src} 
+          //       alt={alt || ''} 
+          //       className="max-w-full h-auto rounded-lg shadow-md mx-auto hover:shadow-lg transition-shadow duration-300"
+          //       loading="lazy"
+          //       {...props}
+          //     />
+          //     {title && (
+          //       <figcaption className="text-center text-sm text-gray-600 mt-3 italic">
+          //         {title}
+          //       </figcaption>
+          //     )}
+          //   </figure>
+          // ),
+          // // Enhanced image/video support - AUTO-DETECTS VIDEO FILES!
+          // img: ({ src, alt, title, ...props }) => {
+          //   // Check if the src is a video file
+          //   const isVideo = src?.match(/\.(mp4|webm|ogg)$/i);
+            
+          //   if (isVideo) {
+          //     // Render as video with controls
+          //     return (
+          //       <figure className="my-8">
+          //         <video 
+          //           controls 
+          //           loop 
+          //           muted 
+          //           className="max-w-full h-auto rounded-lg shadow-md mx-auto"
+          //           style={{ maxHeight: '600px' }}
+          //         >
+          //           <source src={src} type={`video/${isVideo[1]}`} />
+          //           Your browser does not support the video tag.
+          //         </video>
+          //         {title && (
+          //           <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+          //             {title}
+          //           </figcaption>
+          //         )}
+          //       </figure>
+          //     );
+          //   }
+            
+          //   // Render as image (including GIFs)
+          //   return (
+          //     <figure className="my-8">
+          //       <img 
+          //         src={src} 
+          //         alt={alt || ''} 
+          //         className="max-w-full h-auto rounded-lg shadow-md mx-auto hover:shadow-lg transition-shadow duration-300"
+          //         loading="lazy"
+          //         {...props}
+          //       />
+          //       {title && (
+          //         <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+          //           {title}
+          //         </figcaption>
+          //       )}
+          //     </figure>
+          //   );
+          // },
+
+          // Enhanced image/video/PDF support - AUTO-DETECTS ALL MEDIA!
+          img: ({ src, alt, title, ...props }) => {
+            // Check if it's a PDF
+            const isPDF = src?.match(/\.pdf$/i);
+            
+            if (isPDF) {
+              // Render as inline PDF viewer
+              return (
+                <figure className="my-8">
+                  <Suspense fallback={
+                    <div className="flex justify-center py-12 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                      <span className="ml-3 text-gray-600 dark:text-gray-400">Loading PDF...</span>
+                    </div>
+                  }>
+                    <PDFViewer 
+                      file={src} 
+                      title={alt || undefined}
+                      height="600px"
+                    />
+                  </Suspense>
+                  {title && (
+                    <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+                      {title}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+            }
+            
+            // Check if it's a video
+            const isVideo = src?.match(/\.(mp4|webm|ogg)$/i);
+            
+            if (isVideo) {
+              // Render as video with controls
+              return (
+                <figure className="my-8">
+                  <video 
+                    controls 
+                    loop 
+                    muted 
+                    className="max-w-full h-auto rounded-lg shadow-md mx-auto"
+                    style={{ maxHeight: '600px' }}
+                  >
+                    <source src={src} type={`video/${isVideo[1]}`} />
+                    Your browser does not support the video tag.
+                  </video>
+                  {title && (
+                    <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+                      {title}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+            }
+            
+            // Render as image (including GIFs)
+            return (
+              <figure className="my-8">
+                <img 
+                  src={src} 
+                  alt={alt || ''} 
+                  className="max-w-full h-auto rounded-lg shadow-md mx-auto hover:shadow-lg transition-shadow duration-300"
+                  loading="lazy"
+                  {...props}
+                />
+                {title && (
+                  <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+                    {title}
+                  </figcaption>
+                )}
+              </figure>
+            );
+          },
+          
+
           // Bold text
           strong: ({ ...props }) => (
             <strong className="font-bold text-gray-900" {...props} />
