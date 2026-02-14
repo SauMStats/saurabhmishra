@@ -477,6 +477,36 @@ interface MarkdownRendererProps {
   className?: string;
 }
 
+// Get base path from Vite config (e.g., "/saurabhmishra/" for GitHub Pages, "/" for localhost)
+const BASE_PATH = import.meta.env.BASE_URL || '/';
+
+// Helper function to resolve paths for both localhost and GitHub Pages
+function resolveAssetPath(src: string | undefined): string {
+  if (!src) return '';
+  
+  // If it's already an absolute URL (http/https), return as-is
+  if (src.startsWith('http://') || src.startsWith('https://')) {
+    return src;
+  }
+  
+  // If it's a relative path (starts with ./), return as-is (handled by bundler)
+  if (src.startsWith('./') || src.startsWith('../')) {
+    return src;
+  }
+  
+  // If it starts with /, prepend base path if needed
+  if (src.startsWith('/')) {
+    // Check if base path is already included
+    if (BASE_PATH !== '/' && !src.startsWith(BASE_PATH)) {
+      return BASE_PATH + src.slice(1); // Remove leading / and add base path
+    }
+    return src;
+  }
+  
+  // Otherwise, return as-is
+  return src;
+}
+
 export default function MarkdownRenderer({
   content,
   className = "",
@@ -568,12 +598,91 @@ export default function MarkdownRenderer({
           // },
 
           // Enhanced image/video/PDF support - AUTO-DETECTS ALL MEDIA!
-          img: ({ src, alt, title, ...props }) => {
-            // Check if it's a PDF
-            const isPDF = src?.match(/\.pdf$/i);
+          // img: ({ src, alt, title, ...props }) => {
+          //   // Check if it's a PDF
+          //   const isPDF = src?.match(/\.pdf$/i);
             
+          //   if (isPDF) {
+          //     // Render as inline PDF viewer
+          //     return (
+          //       <figure className="my-8">
+          //         <Suspense fallback={
+          //           <div className="flex justify-center py-12 bg-gray-100 dark:bg-gray-800 rounded-lg">
+          //             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          //             <span className="ml-3 text-gray-600 dark:text-gray-400">Loading PDF...</span>
+          //           </div>
+          //         }>
+          //           <PDFViewer 
+          //             file={src} 
+          //             title={alt || undefined}
+          //             height="600px"
+          //           />
+          //         </Suspense>
+          //         {title && (
+          //           <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+          //             {title}
+          //           </figcaption>
+          //         )}
+          //       </figure>
+          //     );
+          //   }
+            
+          //   // Check if it's a video
+          //   const isVideo = src?.match(/\.(mp4|webm|ogg)$/i);
+            
+          //   if (isVideo) {
+          //     // Render as video with controls
+          //     return (
+          //       <figure className="my-8">
+          //         <video 
+          //           controls 
+          //           loop 
+          //           muted 
+          //           className="max-w-full h-auto rounded-lg shadow-md mx-auto"
+          //           style={{ maxHeight: '600px' }}
+          //         >
+          //           <source src={src} type={`video/${isVideo[1]}`} />
+          //           Your browser does not support the video tag.
+          //         </video>
+          //         {title && (
+          //           <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+          //             {title}
+          //           </figcaption>
+          //         )}
+          //       </figure>
+          //     );
+          //   }
+            
+          //   // Render as image (including GIFs)
+          //   return (
+          //     <figure className="my-8">
+          //       <img 
+          //         src={src} 
+          //         alt={alt || ''} 
+          //         className="max-w-full h-auto rounded-lg shadow-md mx-auto hover:shadow-lg transition-shadow duration-300"
+          //         loading="lazy"
+          //         {...props}
+          //       />
+          //       {title && (
+          //         <figcaption className="text-center text-sm text-gray-600 dark:text-gray-400 mt-3 italic">
+          //           {title}
+          //         </figcaption>
+          //       )}
+          //     </figure>
+          //   );
+          // },
+
+          // Enhanced image/video/PDF support with automatic path resolution
+          img: ({ src, alt, title, ...props }) => {
+            // Resolve the path ONCE at the start
+            const resolvedSrc = resolveAssetPath(src);
+            
+            // Check file type based on resolved path
+            const isPDF = resolvedSrc?.match(/\.pdf$/i);
+            const isVideo = resolvedSrc?.match(/\.(mp4|webm|ogg)$/i);
+            
+            // Render PDF
             if (isPDF) {
-              // Render as inline PDF viewer
               return (
                 <figure className="my-8">
                   <Suspense fallback={
@@ -583,7 +692,7 @@ export default function MarkdownRenderer({
                     </div>
                   }>
                     <PDFViewer 
-                      file={src} 
+                      file={resolvedSrc} 
                       title={alt || undefined}
                       height="600px"
                     />
@@ -597,11 +706,8 @@ export default function MarkdownRenderer({
               );
             }
             
-            // Check if it's a video
-            const isVideo = src?.match(/\.(mp4|webm|ogg)$/i);
-            
+            // Render Video
             if (isVideo) {
-              // Render as video with controls
               return (
                 <figure className="my-8">
                   <video 
@@ -611,7 +717,7 @@ export default function MarkdownRenderer({
                     className="max-w-full h-auto rounded-lg shadow-md mx-auto"
                     style={{ maxHeight: '600px' }}
                   >
-                    <source src={src} type={`video/${isVideo[1]}`} />
+                    <source src={resolvedSrc} type={`video/${isVideo[1]}`} />
                     Your browser does not support the video tag.
                   </video>
                   {title && (
@@ -623,11 +729,11 @@ export default function MarkdownRenderer({
               );
             }
             
-            // Render as image (including GIFs)
+            // Render Image (including GIFs)
             return (
               <figure className="my-8">
                 <img 
-                  src={src} 
+                  src={resolvedSrc} 
                   alt={alt || ''} 
                   className="max-w-full h-auto rounded-lg shadow-md mx-auto hover:shadow-lg transition-shadow duration-300"
                   loading="lazy"
