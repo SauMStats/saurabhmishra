@@ -53,7 +53,7 @@ def hello():
 ![Monte Carlo Stock Simulation](/assets/Animations/monte_carlo_stock_simulation.gif "Figure 1: Monte Carlo simulation")
 
 ## Video support test
-
+<!-- 
 <div style="text-align: center; margin: 30px 0;">
   <video controls loop muted style="max-width: 100%; max-height: 600px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <source src="/assets/Animations/monte_carlo_stock_simulation.mp4" type="video/mp4">
@@ -64,7 +64,7 @@ def hello():
   </p>
 </div>
 
-## Video support test (renderer shortens)
+## Video support test (renderer shortens) -->
 ![Video](/assets/Animations/monte_carlo_stock_simulation.mp4 "Figure 1")
 
 That's it! This post should appear on your blog automatically.
