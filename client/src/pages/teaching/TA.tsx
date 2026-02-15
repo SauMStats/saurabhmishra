@@ -1,21 +1,21 @@
 export default function TA() {
   return (
-    <div className="min-h-screen bg-white py-16">
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-16">
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
             Graduate Teaching Assistantships
           </h1>
-          <p className="text-xl text-academic-gray">
+          <p className="text-xl text-academic-gray dark:text-gray-400">
             Supporting undergraduate and postgraduate instruction in mathematics and statistics
           </p>
         </div>
 
         {/* Overview */}
         <section className="mb-12">
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             I have served as a Teaching Assistant for a broad range of undergraduate and
             postgraduate courses in mathematics, probability, and statistics. My role
             primarily involved conducting tutorial and problem-solving sessions,
@@ -26,38 +26,38 @@ export default function TA() {
 
         {/* Courses Assisted */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
             Courses Assisted
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
 
-            <div className="bg-academic-light p-5 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="bg-academic-light dark:bg-gray-800 p-5 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Core Mathematics
               </h3>
-              <ul className="text-gray-600 text-sm list-disc list-inside">
+              <ul className="text-gray-600 dark:text-gray-300 text-sm list-disc list-inside">
                 <li>Calculus (MA 1110, MA 1220)</li>
                 <li>Linear Algebra (MA 1140)</li>
               </ul>
             </div>
 
-            <div className="bg-academic-light p-5 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="bg-academic-light dark:bg-gray-800 p-5 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Probability & Stochastic Foundations
               </h3>
-              <ul className="text-gray-600 text-sm list-disc list-inside">
+              <ul className="text-gray-600 dark:text-gray-300 text-sm list-disc list-inside">
                 <li>Introduction to Probability</li>
                 <li>Probability Theory</li>
                 <li>Probability in Finance</li>
               </ul>
             </div>
 
-            <div className="bg-academic-light p-5 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="bg-academic-light dark:bg-gray-800 p-5 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Statistics & Inference
               </h3>
-              <ul className="text-gray-600 text-sm list-disc list-inside">
+              <ul className="text-gray-600 dark:text-gray-300 text-sm list-disc list-inside">
                 <li>Introduction to Statistics</li>
                 <li>Statistical Inference</li>
                 <li>Bayesian Analysis</li>
@@ -65,11 +65,11 @@ export default function TA() {
               </ul>
             </div>
 
-            <div className="bg-academic-light p-5 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="bg-academic-light dark:bg-gray-800 p-5 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Applied & Advanced Topics
               </h3>
-              <ul className="text-gray-600 text-sm list-disc list-inside">
+              <ul className="text-gray-600 dark:text-gray-300 text-sm list-disc list-inside">
                 <li>Time Series Analysis</li>
                 <li>Applied Statistics</li>
               </ul>
@@ -80,10 +80,10 @@ export default function TA() {
 
         {/* Responsibilities */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
             Responsibilities
           </h2>
-          <ul className="text-gray-600 list-disc list-inside space-y-2">
+          <ul className="text-gray-600 dark:text-gray-300 list-disc list-inside space-y-2">
             <li>Conducted tutorial and problem-solving sessions</li>
             <li>Assisted in grading assignments, quizzes, and examinations</li>
             <li>Held doubt-clearing sessions and office hours</li>
@@ -94,10 +94,10 @@ export default function TA() {
 
         {/* Teaching Interests */}
         <section>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
             Teaching Interests
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             Probability theory, statistical inference, Bayesian methods,
             multivariate analysis, and applied statistical modeling.
           </p>
@@ -107,10 +107,6 @@ export default function TA() {
     </div>
   );
 }
-
-
-
-
 
 
 

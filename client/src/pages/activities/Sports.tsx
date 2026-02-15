@@ -3,34 +3,34 @@ import { Trophy, Calendar, MapPin, Users, Target, Dumbbell, Activity } from "luc
 
 export default function Sports() {
   return (
-    <div className="min-h-screen bg-white py-16">
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-16">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" data-testid="text-sports-heading">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6" data-testid="text-sports-heading">
             Sports & Fitness
           </h1>
-          <p className="text-xl text-academic-gray" data-testid="text-sports-subtitle">
+          <p className="text-xl text-academic-gray dark:text-gray-400" data-testid="text-sports-subtitle">
             Maintaining physical fitness and enjoying sports at IIT Hyderabad
           </p>
         </div>
 
         {/* ================= Gym & Strength Training (ADDED) ================= */}
         <section className="mb-16" data-testid="section-gym">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-8">
             Gym & Strength Training
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Gym Routine */}
-            <div className="bg-academic-light p-6 rounded-xl">
+            <div className="bg-academic-light dark:bg-gray-800 p-6 rounded-xl">
               <div className="flex items-center mb-4">
                 <Dumbbell className="w-6 h-6 text-academic-blue mr-3" />
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                   Weekly Gym Routine
                 </h3>
               </div>
 
-              <div className="space-y-3 text-sm text-gray-600">
+              <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300">
                 <div className="flex justify-between">
                   <span>Frequency</span>
                   <span className="font-medium text-academic-blue">
@@ -59,15 +59,15 @@ export default function Sports() {
             </div>
 
             {/* Personal Records */}
-            <div className="bg-academic-light p-6 rounded-xl">
+            <div className="bg-academic-light dark:bg-gray-800 p-6 rounded-xl">
               <div className="flex items-center mb-4">
                 <Activity className="w-6 h-6 text-academic-blue mr-3" />
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                   Personal Records (PRs)
                 </h3>
               </div>
 
-              <div className="space-y-4 text-sm text-gray-600">
+              <div className="space-y-4 text-sm text-gray-600 dark:text-gray-300">
                 <div className="flex justify-between">
                   <span>🏋️ Squat</span>
                   <span className="font-semibold text-academic-blue">110 kg</span>
@@ -89,15 +89,15 @@ export default function Sports() {
 
         {/* Current Activities */}
         <section className="mb-16" data-testid="section-current">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Sports Activities</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-8">Sports Activities</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Table Tennis */}
-            <div className="bg-academic-light border-l-4 border-academic-blue p-6 rounded-r-lg">
+            <div className="bg-academic-light dark:bg-gray-800 border-l-4 border-academic-blue p-6 rounded-r-lg">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">Table Tennis</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Table Tennis</h3>
                 <Trophy className="w-6 h-6 text-yellow-500" />
               </div>
-              <div className="space-y-2 text-sm text-gray-600 mb-4">
+              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300 mb-4">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
                   <span>2-3 evenings per week</span>
@@ -111,23 +111,23 @@ export default function Sports() {
                   <span>Competitive level</span>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 Active member of the campus table tennis community, participating in inter-department tournaments and regular practice sessions. The sport sharpens reflexes, improves focus, and serves as an effective stress reliever after long work hours.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Tournament Player</span>
-                <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Evening Practice</span>
-                <span className="px-2 py-1 bg-white text-gray-700 rounded-full">Campus Team</span>
+                <span className="px-2 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Tournament Player</span>
+                <span className="px-2 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Evening Practice</span>
+                <span className="px-2 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Campus Team</span>
               </div>
             </div>
 
             {/* Running */}
-            <div className="bg-white border border-gray-200 p-6 rounded-lg">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 p-6 rounded-lg">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">Running</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Running</h3>
                 <Trophy className="w-6 h-6 text-green-500" />
               </div>
-              <div className="space-y-2 text-sm text-gray-600 mb-4">
+              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300 mb-4">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
                   <span>2-3x (morning runs)</span>
@@ -141,23 +141,23 @@ export default function Sports() {
                   <span>Fitness</span>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 I enjoy running and jogging 2–3 times a week to support my overall fitness and endurance.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">5+ kmpw</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Fitness</span>    {/* Marathon */}
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Running</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">5+ kmpw</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Fitness</span>    {/* Marathon */}
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Running</span>
               </div>
             </div>
 
             {/* Badminton */}
-            <div className="bg-white border border-gray-200 p-6 rounded-lg">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 p-6 rounded-lg">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">Badminton</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Badminton</h3>
                 <Trophy className="w-6 h-6 text-red-500" />
               </div>
-              <div className="space-y-2 text-sm text-gray-600 mb-4">
+              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300 mb-4">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
                   <span>1-2x per week</span>
@@ -171,23 +171,23 @@ export default function Sports() {
                   <span>Intermediate</span>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 I enjoy the game for its high intensity and physical demand. I value the endurance, fast pace, and full-body workout that come with sustained rallies and constant movement. The game provides an excellent cardiovascular workout and a satisfying way to stay active and energized.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">High Intensity</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Endurance</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Indoor</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">High Intensity</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Endurance</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Indoor</span>
               </div>
             </div>
 
             {/* Swimming */}
-            <div className="bg-white border border-gray-200 p-6 rounded-lg">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 p-6 rounded-lg">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-gray-900">Swimming</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Swimming</h3>
                 <Trophy className="w-6 h-6 text-blue-500" />
               </div>
-              <div className="space-y-2 text-sm text-gray-600 mb-4">
+              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300 mb-4">
                 <div className="flex items-center">
                   <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
                   <span>2x per week</span>
@@ -201,13 +201,13 @@ export default function Sports() {
                   <span>Learning swimming</span>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                 I use swimming as an alternative to morning running(when I skip), primarily to learn proper swimming techniques while maintaining fitness.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Learning</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Technique</span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full">Cross-Training</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Learning</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Technique</span>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Cross-Training</span>
               </div>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function Sports() {
 
         {/* Achievements */}
         {/* <section className="mb-16" data-testid="section-achievements">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Athletic Achievements</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-8">Athletic Achievements</h2>
           <div className="space-y-6">
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
               <div className="flex items-center mb-3">
@@ -265,9 +265,9 @@ export default function Sports() {
 
         {/* Team Involvement */}
         {/* <section className="mb-16" data-testid="section-teams">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">Team Involvement</h2>
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-8">Team Involvement</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white border border-gray-200 p-6 rounded-lg">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <Users className="w-6 h-6 text-academic-blue mr-3" />
                 <h3 className="text-lg font-semibold text-gray-900">Stanford Graduate Tennis Club</h3>
@@ -280,7 +280,7 @@ export default function Sports() {
               </div>
             </div>
 
-            <div className="bg-white border border-gray-200 p-6 rounded-lg">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <Users className="w-6 h-6 text-academic-blue mr-3" />
                 <h3 className="text-lg font-semibold text-gray-900">Bay Area Running Club</h3>
@@ -296,11 +296,11 @@ export default function Sports() {
         </section> */}
 
         {/* Sports Philosophy */}
-        <section className="bg-academic-light rounded-xl p-8" data-testid="section-philosophy">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Sports & Work Balance</h2> {/* Sports & Research Balance */}
-          <div className="space-y-4 text-gray-600 leading-relaxed">
+        <section className="bg-academic-light dark:bg-gray-800 rounded-xl p-8" data-testid="section-philosophy">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-6">Sports & Work Balance</h2> {/* Sports & Research Balance */}
+          <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
             <p>
-              Physical activity is an important part of my routine. It helps me stay grounded, manage stress, and maintain overall well-being. Whether it’s training for endurance or simply staying active, sports provide structure, balance, and a welcome reset from long days. I find that regular movement supports both physical health and mental clarity.
+              Physical activity is an important part of my routine. It helps me stay grounded, manage stress, and maintain overall well-being. Whether it's training for endurance or simply staying active, sports provide structure, balance, and a welcome reset from long days. I find that regular movement supports both physical health and mental clarity.
             </p>
             <p>
               I value a sustainable, balanced lifestyle and believe staying active makes everyday work more enjoyable and productive.
@@ -310,15 +310,15 @@ export default function Sports() {
           <div className="mt-6 grid md:grid-cols-3 gap-4 text-center">
             <div className="bg-white p-4 rounded-lg">
               <div className="text-2xl font-bold text-academic-blue mb-2">8+</div>
-              <div className="text-gray-600 text-sm">Hours/Week Training</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm">Hours/Week Training</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
               <div className="text-2xl font-bold text-academic-blue mb-2">4</div>
-              <div className="text-gray-600 text-sm">Active Sports</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm">Active Sports</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
               <div className="text-2xl font-bold text-academic-blue mb-2">4</div>
-              <div className="text-gray-600 text-sm">Years Competing</div>
+              <div className="text-gray-600 dark:text-gray-300 text-sm">Years Competing</div>
             </div>
           </div>
         </section>

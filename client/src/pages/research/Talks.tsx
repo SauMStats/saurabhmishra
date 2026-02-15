@@ -240,19 +240,21 @@
 // }
 
 
-
 import { Calendar, MapPin, Users } from "lucide-react";
 
 export default function Talks() {
   return (
-    <div className="min-h-screen bg-white py-16">
+    /* CHANGED: Added dark:bg-gray-900 */
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-16">
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          {/* CHANGED: Added dark:text-gray-100 */}
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
             Talks & Presentations
           </h1>
-          <p className="text-xl text-academic-gray">
+          {/* CHANGED: Added dark:text-gray-400 */}
+          <p className="text-xl text-academic-gray dark:text-gray-400">
             Conference presentations, seminars, and invited talks
           </p>
         </div>
@@ -260,9 +262,11 @@ export default function Talks() {
         {/* Talks Section */}
         <section className="space-y-10">
           {/* Talk 1 */}
-          <div className="bg-academic-light border-l-4 border-academic-blue p-6 rounded-r-lg">
+          {/* CHANGED: Added dark:bg-gray-800 */}
+          <div className="bg-academic-light dark:bg-gray-800 border-l-4 border-academic-blue p-6 rounded-r-lg">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-              <h3 className="text-xl font-semibold text-gray-900">
+              {/* CHANGED: Added dark:text-gray-100 */}
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                 A Multivariate Approach to Joint Testing of Main Genetic and
                 Gene–Environment Interaction Effects
               </h3>
@@ -271,7 +275,8 @@ export default function Talks() {
               </span>
             </div>
 
-            <div className="space-y-2 text-gray-600">
+            {/* CHANGED: Added dark:text-gray-300 */}
+            <div className="space-y-2 text-gray-600 dark:text-gray-300">
               <div className="flex items-center">
                 <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
                 <span>December 27–31, 2024</span>
@@ -286,7 +291,7 @@ export default function Talks() {
               </div>
             </div>
 
-            <p className="text-gray-600 mt-4">
+            <p className="text-gray-600 dark:text-gray-300 mt-4">
               Contributed talk presenting a multivariate statistical framework
               for jointly testing genetic main effects and gene–environment
               interactions across correlated phenotypes, with applications to
@@ -295,9 +300,10 @@ export default function Talks() {
           </div>
 
           {/* Talk 2 */}
-          <div className="border-l-4 border-gray-300 pl-6 py-4">
+          {/* CHANGED: Added dark:border-gray-600 */}
+          <div className="border-l-4 border-gray-300 dark:border-gray-600 pl-6 py-4">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                 A Multivariate Approach to Joint Testing of Main Genetic and
                 Gene–Environment Interaction Effects
               </h3>
@@ -306,7 +312,7 @@ export default function Talks() {
               </span>
             </div>
 
-            <div className="space-y-2 text-gray-600 mb-3">
+            <div className="space-y-2 text-gray-600 dark:text-gray-300 mb-3">
               <div className="flex items-center">
                 <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
                 <span>February 12–14, 2024</span>
@@ -320,7 +326,7 @@ export default function Talks() {
               </div>
             </div>
 
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Oral presentation focusing on multivariate inference for joint
               testing of genetic and gene–environment interaction effects,
               highlighting methodological advantages over univariate
@@ -329,9 +335,9 @@ export default function Talks() {
           </div>
 
           {/* Talk 3 */}
-          <div className="border-l-4 border-gray-300 pl-6 py-4">
+          <div className="border-l-4 border-gray-300 dark:border-gray-600 pl-6 py-4">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                 A p-Value Aggregation Approach to Robust Gene–Environment
                 Interaction Testing
               </h3>
@@ -340,7 +346,7 @@ export default function Talks() {
               </span>
             </div>
 
-            <div className="space-y-2 text-gray-600 mb-3">
+            <div className="space-y-2 text-gray-600 dark:text-gray-300 mb-3">
               <div className="flex items-center">
                 <Calendar className="w-4 h-4 mr-2 text-academic-blue" />
                 <span>January 31, 2026</span>
@@ -353,7 +359,7 @@ export default function Talks() {
               </div>
             </div>
 
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Presented a robust p-value aggregation framework for testing
               gene–environment interactions, emphasizing stability, power, and
               applicability to large-scale genetic studies.
@@ -362,51 +368,53 @@ export default function Talks() {
         </section>
 
         {/* Speaking Topics */}
-        <section className="mt-16 bg-academic-light rounded-xl p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+        {/* CHANGED: Added dark:bg-gray-800 */}
+        <section className="mt-16 bg-academic-light dark:bg-gray-800 rounded-xl p-8">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
             Speaking Topics
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             I am available to give seminars and conference talks on the following
             topics:
           </p>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-white p-4 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            {/* CHANGED: Added dark:bg-gray-700 to all topic cards */}
+            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Statistical Genetics
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Genetic association studies, polygenic models, and inference for
                 complex traits
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Gene–Environment Interactions
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Methodology for detecting and testing G×E effects in GWAS and
                 biobank-scale data
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 Multivariate Methods
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Joint testing, correlated phenotypes, and multivariate
                 hypothesis testing
               </p>
             </div>
 
-            <div className="bg-white p-4 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">
+            <div className="bg-white dark:bg-gray-700 p-4 rounded-lg">
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
                 GWAS & TWAS Methodology
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Genome-wide and transcriptome-wide association studies, power,
                 and modeling challenges
               </p>

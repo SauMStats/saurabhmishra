@@ -1,0 +1,366 @@
+/* ========================================
+   DARK MODE ENHANCEMENTS
+   Add this as a separate file: client/src/styles/dark-mode.css
+   Import in main.tsx: import './styles/dark-mode.css';
+   ======================================== */
+
+/* ============================================
+   GLOBAL DARK MODE ENHANCEMENTS
+   Builds on top of existing Tailwind dark mode
+   ============================================ */
+
+/* Ensure body and root use CSS variables properly */
+.dark {
+  background-color: hsl(240, 10%, 3.9%);
+  color: hsl(0, 0%, 98%);
+}
+
+.dark body {
+  background-color: hsl(240, 10%, 3.9%);
+  color: hsl(0, 0%, 98%);
+}
+
+/* ============================================
+   COMPONENT-SPECIFIC DARK MODE FIXES
+   ============================================ */
+
+/* Cards - Generic */
+.dark .card,
+.dark [class*="card"] {
+  background-color: hsl(240, 10%, 3.9%);
+  border-color: hsl(240, 3.7%, 15.9%);
+}
+
+/* Research Interest Cards - Bio Page */
+.dark .research-card,
+.dark [class*="research"],
+.dark [class*="interest"] {
+  background-color: hsl(240, 10%, 3.9%) !important;
+  color: hsl(0, 0%, 98%);
+}
+
+/* Publication Cards */
+.dark .publication-card,
+.dark [class*="publication"] {
+  background-color: hsl(240, 10%, 3.9%);
+  border-left-color: hsl(207, 90%, 54%);
+}
+
+/* Blog Cards */
+.dark .blog-card {
+  background-color: hsl(240, 10%, 3.9%);
+  border-color: hsl(240, 3.7%, 15.9%);
+}
+
+.dark .blog-card:hover {
+  background-color: hsl(240, 3.7%, 15.9%);
+}
+
+/* Featured Badge */
+.dark .featured-badge {
+  background-color: hsl(207, 90%, 54%);
+  color: white;
+}
+
+/* Teaching/Course Cards */
+.dark .course-card,
+.dark [class*="course"] {
+  background-color: hsl(240, 10%, 3.9%);
+}
+
+/* Sports/Activities Cards */
+.dark .sports-card,
+.dark [class*="activity"],
+.dark [class*="sports"] {
+  background-color: hsl(240, 10%, 3.9%);
+}
+
+/* Award Cards */
+.dark .award-card,
+.dark [class*="award"],
+.dark [class*="honor"] {
+  background-color: hsl(240, 10%, 3.9%);
+  border-left-color: #fbbf24;
+}
+
+/* Contact Cards */
+.dark .contact-card {
+  background-color: hsl(240, 10%, 3.9%);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.dark nav,
+.dark header {
+  background-color: hsl(240, 10%, 3.9%);
+  border-bottom-color: hsl(240, 3.7%, 15.9%);
+}
+
+/* Dropdown menus */
+.dark .dropdown-menu {
+  background-color: hsl(240, 10%, 3.9%);
+  border-color: hsl(240, 3.7%, 15.9%);
+}
+
+/* ============================================
+   FORMS & INPUTS
+   ============================================ */
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: hsl(240, 3.7%, 15.9%);
+  border-color: hsl(240, 3.7%, 15.9%);
+  color: hsl(0, 0%, 98%);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: hsl(240, 5%, 64.9%);
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: hsl(207, 90%, 54%);
+}
+
+/* ============================================
+   BUTTONS & TAGS
+   ============================================ */
+
+.dark button[class*="border"],
+.dark .tag,
+.dark .badge {
+  background-color: hsl(240, 3.7%, 15.9%);
+  border-color: hsl(240, 3.7%, 15.9%);
+  color: hsl(0, 0%, 98%);
+}
+
+.dark button[class*="border"]:hover,
+.dark .tag:hover,
+.dark .badge:hover {
+  background-color: hsl(240, 5%, 25%);
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+.dark table {
+  background-color: hsl(240, 10%, 3.9%);
+  border-color: hsl(240, 3.7%, 15.9%);
+}
+
+.dark thead {
+  background-color: hsl(240, 3.7%, 15.9%);
+}
+
+.dark th,
+.dark td {
+  border-color: hsl(240, 3.7%, 15.9%);
+}
+
+.dark tr:hover {
+  background-color: hsl(240, 3.7%, 15.9%);
+}
+
+/* ============================================
+   MARKDOWN CONTENT (Blog Posts)
+   Uses your existing blog-content classes
+   ============================================ */
+
+.dark .blog-content {
+  color: hsl(0, 0%, 98%);
+}
+
+.dark .blog-content h1,
+.dark .blog-content h2,
+.dark .blog-content h3,
+.dark .blog-content h4,
+.dark .blog-content h5,
+.dark .blog-content h6 {
+  color: hsl(0, 0%, 98%);
+}
+
+.dark .blog-content p {
+  color: hsl(240, 5%, 84%);
+}
+
+.dark .blog-content a {
+  color: hsl(207, 90%, 64%);
+}
+
+.dark .blog-content a:hover {
+  color: hsl(207, 90%, 74%);
+}
+
+.dark .blog-content strong {
+  color: hsl(0, 0%, 98%);
+}
+
+.dark .blog-content blockquote {
+  background-color: rgba(66, 153, 225, 0.1);
+  border-left-color: hsl(207, 90%, 54%);
+  color: hsl(240, 5%, 84%);
+}
+
+/* ============================================
+   SHADOWS
+   ============================================ */
+
+.dark [class*="shadow-sm"] {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.dark [class*="shadow-md"],
+.dark [class*="shadow-lg"] {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.dark footer {
+  background-color: hsl(240, 10%, 3.9%);
+  border-top-color: hsl(240, 3.7%, 15.9%);
+  color: hsl(240, 5%, 64.9%);
+}
+
+.dark footer a {
+  color: hsl(240, 5%, 64.9%);
+}
+
+.dark footer a:hover {
+  color: hsl(0, 0%, 98%);
+}
+
+/* ============================================
+   IMAGES & MEDIA
+   ============================================ */
+
+.dark img {
+  opacity: 0.9;
+}
+
+.dark img:hover {
+  opacity: 1;
+}
+
+.dark figcaption {
+  color: hsl(240, 5%, 64.9%);
+}
+
+/* ============================================
+   PDF VIEWER
+   ============================================ */
+
+.dark .pdf-viewer {
+  background-color: hsl(240, 10%, 3.9%);
+  border-color: hsl(240, 3.7%, 15.9%);
+}
+
+/* ============================================
+   SCROLLBAR (Chrome/Edge/Safari)
+   ============================================ */
+
+.dark ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: hsl(240, 10%, 3.9%);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(240, 3.7%, 25%);
+  border-radius: 6px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(240, 5%, 35%);
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+.dark .loading-spinner {
+  border-color: hsl(240, 3.7%, 15.9%);
+  border-top-color: hsl(207, 90%, 54%);
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+.dark ::selection {
+  background-color: rgba(66, 153, 225, 0.3);
+  color: hsl(0, 0%, 98%);
+}
+
+/* ============================================
+   FOCUS STATES
+   ============================================ */
+
+.dark *:focus {
+  outline-color: hsl(207, 90%, 54%);
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+@media (max-width: 768px) {
+  .dark .mobile-menu {
+    background-color: hsl(240, 10%, 3.9%);
+    border-color: hsl(240, 3.7%, 15.9%);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - Ensure readable contrast
+   ============================================ */
+
+.dark .text-muted {
+  color: hsl(240, 5%, 64.9%);
+}
+
+.dark .text-primary {
+  color: hsl(0, 0%, 98%);
+}
+
+.dark .text-secondary {
+  color: hsl(240, 5%, 84%);
+}
+
+/* ============================================
+   SMOOTH TRANSITIONS
+   ============================================ */
+
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* ============================================
+   PRINT STYLES (Disable dark mode for printing)
+   ============================================ */
+
+@media print {
+  .dark {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .dark * {
+    background-color: white !important;
+    color: black !important;
+    border-color: black !important;
+  }
+}

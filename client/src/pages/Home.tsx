@@ -5,7 +5,8 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-white py-16">  
+      {/* CHANGED: Added dark:bg-gray-900 */}
+      <section className="bg-white dark:bg-gray-900 py-16">  
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-6">
             <div className="mb-6">
@@ -17,13 +18,16 @@ export default function Home() {
                 data-testid="img-profile"
               />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight" data-testid="text-name">
+            {/* CHANGED: Added dark:text-gray-100 */}
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6 tracking-tight" data-testid="text-name">
               Saurabh Mishra
             </h1>
-            <p className="text-xl md:text-2xl text-academic-gray mb-8 font-light" data-testid="text-title">
+            {/* CHANGED: Added dark:text-gray-400 */}
+            <p className="text-xl md:text-2xl text-academic-gray dark:text-gray-400 mb-8 font-light" data-testid="text-title">
               PhD Student in Mathematics | Biostatistics Researcher
             </p>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed" data-testid="text-bio">
+            {/* CHANGED: Added dark:text-gray-300 */}
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed" data-testid="text-bio">
               Advancing statistical genetics and biostatistics through genome-wide association analysis (GWAS) and transcriptome-wide association analysis (TWAS), with focus on gene-environment interactions in complex traits.
             </p>
             

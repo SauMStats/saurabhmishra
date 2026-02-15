@@ -154,8 +154,6 @@
 
 
 
-
-
 import { Calendar, Clock, ArrowRight, Tag, Search } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useMemo } from "react";
@@ -199,13 +197,13 @@ export default function Blog() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="flex flex-col items-center text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-600 pb-8">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-600 dark:text-indigo-400 pb-8">
               Blog
             </h1>
-            <p className="text-lg text-gray-500 max-w-2xl" data-testid="text-blog-subtitle">
+            <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl" data-testid="text-blog-subtitle">
               Thoughts on research, academia, and statistical genetics
             </p>
           </div>
@@ -219,19 +217,19 @@ export default function Blog() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="flex flex-col items-center text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-600 pb-8">
+            <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-600 dark:text-indigo-400 pb-8">
               Blog
             </h1>
-            <p className="text-lg text-gray-500 max-w-2xl" data-testid="text-blog-subtitle">
+            <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl" data-testid="text-blog-subtitle">
               Thoughts on research, academia, and statistical genetics
             </p>
           </div>
           <div className="text-center">
             <p className="text-red-600 mb-4 font-medium" data-testid="text-error-message">Failed to load blog posts</p>
-            <p className="text-gray-600" data-testid="text-error-details">Please try again later</p>
+            <p className="text-gray-600 dark:text-gray-400" data-testid="text-error-details">Please try again later</p>
           </div>
         </div>
       </div>
@@ -239,14 +237,14 @@ export default function Blog() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-600 pb-8">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-indigo-600 dark:text-indigo-400 pb-8">
             Blog
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl" data-testid="text-blog-subtitle">
+          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl" data-testid="text-blog-subtitle">
             Exploring statistical genetics, GWAS methodology, and gene-environment interactions
           </p>
         </div>
@@ -261,7 +259,7 @@ export default function Blog() {
               placeholder="Search blog posts..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             />
           </div>
 
@@ -273,7 +271,7 @@ export default function Blog() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   selectedTag === null
                     ? 'bg-blue-600 text-white shadow-md'
-                    : 'bg-white text-gray-700 border border-gray-300 hover:border-blue-600 hover:text-blue-600'
+                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:border-blue-600 hover:text-blue-600'
                 }`}
               >
                 All Posts
@@ -285,7 +283,7 @@ export default function Blog() {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     selectedTag === tag
                       ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-white text-gray-700 border border-gray-300 hover:border-blue-600 hover:text-blue-600'
+                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:border-blue-600 hover:text-blue-600'
                   }`}
                 >
                   <Tag className="w-3 h-3 inline mr-1" />
@@ -297,7 +295,7 @@ export default function Blog() {
 
           {/* Results count */}
           {(selectedTag || searchQuery) && (
-            <p className="text-center text-gray-600">
+            <p className="text-center text-gray-600 dark:text-gray-400">
               Found {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
             </p>
           )}
@@ -306,7 +304,7 @@ export default function Blog() {
         {/* Blog Posts */}
         {!filteredPosts || filteredPosts.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-gray-600 text-lg" data-testid="text-no-posts">
+            <p className="text-gray-600 dark:text-gray-400 text-lg" data-testid="text-no-posts">
               {posts.length === 0 
                 ? "No blog posts available yet. Check back soon for updates!"
                 : "No posts match your search. Try different keywords or clear filters."}
@@ -317,7 +315,7 @@ export default function Blog() {
             {filteredPosts.map((post, index) => (
               <article 
                 key={post.id} 
-                className={`group bg-white rounded-xl shadow-sm border border-gray-200 overflow-visible hover:shadow-xl transition-all duration-300 ${
+                className={`group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-visible hover:shadow-xl transition-all duration-300 ${
                   post.featured ? 'ring-2 ring-blue-500 ring-offset-2' : ''
                 }`}
                 data-testid={`blog-post-${post.slug}`}
@@ -331,7 +329,7 @@ export default function Blog() {
                   )}
 
                   {/* Meta information */}
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-4" data-testid={`blog-meta-${post.slug}`}>
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4" data-testid={`blog-meta-${post.slug}`}>
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-2 text-gray-400" />
                       <time dateTime={new Date(post.publishedAt).toISOString()}>
@@ -342,7 +340,7 @@ export default function Blog() {
                         })}
                       </time>
                     </div>
-                    <span className="text-gray-300">•</span>
+                    <span className="text-gray-300 dark:text-gray-600">•</span>
                     <div className="flex items-center">
                       <Clock className="w-4 h-4 mr-2 text-gray-400" />
                       <span>{post.readTime}</span>
@@ -352,14 +350,14 @@ export default function Blog() {
                   {/* Title */}
                   <Link href={`/blog/${post.slug}`}>
                     <a>
-                      <h2 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-200" data-testid={`blog-title-${post.slug}`}>
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 group-hover:text-blue-600 transition-colors duration-200" data-testid={`blog-title-${post.slug}`}>
                         {post.title}
                       </h2>
                     </a>
                   </Link>
 
                   {/* Excerpt */}
-                  <p className="text-gray-600 leading-relaxed mb-6 text-lg" data-testid={`blog-excerpt-${post.slug}`}>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-lg" data-testid={`blog-excerpt-${post.slug}`}>
                     {post.excerpt}
                   </p>
 
@@ -369,7 +367,7 @@ export default function Blog() {
                       {post.tags.map(tag => (
                         <span 
                           key={tag}
-                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700 transition-colors cursor-pointer"
+                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-100 hover:text-blue-700 transition-colors cursor-pointer"
                           onClick={(e) => {
                             e.preventDefault();
                             setSelectedTag(tag);
@@ -396,17 +394,22 @@ export default function Blog() {
         )}
 
         {/* Blog Info */}
-        <section className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100 shadow-sm" data-testid="section-blog-info">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Blog</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            This blog explores advanced topics in statistical genetics, focusing on genome-wide association studies (GWAS), 
+        <section className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 border border-blue-100 dark:border-gray-600 shadow-sm" data-testid="section-blog-info">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">About Blogs</h2>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            {/* This blog explores advanced topics in statistical genetics, focusing on genome-wide association studies (GWAS), 
             transcriptome-wide association studies (TWAS), and gene-environment interactions. I share insights from my research, 
-            methodological developments, and computational approaches to understanding the genetic architecture of complex traits.
+            methodological developments, and computational approaches to understanding the genetic architecture of complex traits. */}
+            This blog focuses on statistics in practice, including statistical genetics, bioinformatics, and mathematical finance. The posts reflect an ongoing process of understanding rather than final conclusions, emphasizing methodological insight through theory and application. 
           </p>
-          <p className="text-gray-700 leading-relaxed">
-            Each post includes detailed mathematical formulations, practical implementation strategies, and discussions of 
+          <p className="text-gray-650 dark:text-gray-400 italic text-center">
+            “Assumptions are innocent until proven unrealistic. Models are guilty until proven useful.”
+            {/* Models are guilty until proven useful. */}
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            {/* Each post includes detailed mathematical formulations, practical implementation strategies, and discussions of 
             current challenges and future directions in the field. Whether you're a researcher, student, or practitioner 
-            in genomics and biostatistics, you'll find content that bridges theory and application.
+            in genomics and biostatistics, you'll find content that bridges theory and application. */}
           </p>
         </section>
       </div>

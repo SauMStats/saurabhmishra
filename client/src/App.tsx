@@ -110,6 +110,7 @@ import ResearchGroup from "@/pages/research/Group";
 import Talks from "@/pages/research/Talks";
 import Publications from "@/pages/research/Publications";
 import Collaborators from "@/pages/research/Collaborators";
+import Software from "@/pages/research/Software"; // ← ADDED: Import Software component
 import Courses from "@/pages/teaching/Courses";
 import TA from "@/pages/teaching/TA";
 import Sports from "@/pages/activities/Sports";
@@ -135,6 +136,7 @@ function AppRoutes() {
           <Route path="/research/group" component={ResearchGroup} />
           <Route path="/research/talks" component={Talks} />
           <Route path="/research/publications" component={Publications} />
+          <Route path="/research/software" component={Software} /> {/* ← ADDED: Software route */}
           <Route path="/research/collaborators" component={Collaborators} />
           <Route path="/teaching/courses" component={Courses} />
           <Route path="/teaching/ta" component={TA} />

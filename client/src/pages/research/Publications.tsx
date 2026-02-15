@@ -2,39 +2,47 @@ import { ExternalLink, Code } from "lucide-react";
 
 export default function Publications() {
   return (
-    <div className="min-h-screen bg-white py-16">
+    /* CHANGED: Added dark:bg-gray-900 */
+    <div className="min-h-screen bg-white dark:bg-gray-900 py-16">
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          {/* CHANGED: Added dark:text-gray-100 */}
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Publications
           </h1>
-          <p className="text-xl text-academic-gray">
+          {/* CHANGED: Added dark:text-gray-400 */}
+          <p className="text-xl text-academic-gray dark:text-gray-400">
             Peer-reviewed journal articles
           </p>
         </div>
 
         {/* Publication */}
         <section>
-          <div className="bg-academic-light border-l-4 border-academic-blue p-8 rounded-r-lg">
+          {/* CHANGED: Added dark:bg-gray-800 dark:border-gray-700 */}
+          <div className="bg-academic-light dark:bg-gray-800 border-l-4 border-academic-blue dark:border-gray-700 p-8 rounded-r-lg">
 
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">
+            {/* CHANGED: Added dark:text-gray-100 */}
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
               A Multi-Phenotype Approach to Joint Testing of Main Genetic and
               Gene–Environment Interaction Effects
             </h2>
 
-            <p className="text-academic-gray mb-2">
+            {/* CHANGED: Added dark:text-gray-400 */}
+            <p className="text-academic-gray dark:text-gray-400 mb-2">
               <span className="font-medium">Saurabh Mishra</span>, Arunabha Majumdar
             </p>
 
-            <p className="text-sm text-gray-500 mb-4">
+            {/* CHANGED: Added dark:text-gray-500 */}
+            <p className="text-sm text-gray-500 dark:text-gray-500 mb-4">
               <em>
                 Statistics in Medicine, Volume 44, Issues 20–22 (2025), e70253
               </em>
             </p>
 
-            <p className="text-gray-600 leading-relaxed mb-6">
+            {/* CHANGED: Added dark:text-gray-300 */}
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
               This paper proposes a unified multivariate framework for joint
               testing of main genetic effects and gene–environment interactions
               across multiple correlated phenotypes. The proposed approach
@@ -69,22 +77,27 @@ export default function Publications() {
         </section>
 
         {/* External Profiles */}
-        <section className="mt-16 bg-academic-light rounded-xl p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+        {/* CHANGED: Added dark:bg-gray-800 */}
+        <section className="mt-16 bg-academic-light dark:bg-gray-800 rounded-xl p-8">
+          {/* CHANGED: Added dark:text-gray-100 */}
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
             Academic Profiles
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
+            {/* CHANGED: Added dark:bg-gray-700 dark:border-gray-600 */}
             <a
               href="https://scholar.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-200"
+              className="flex items-center p-4 bg-white dark:bg-gray-700 border dark:border-gray-600 rounded-lg hover:shadow-md transition-shadow duration-200"
             >
               <ExternalLink className="w-6 h-6 text-blue-600 mr-4" />
               <div>
-                <h3 className="font-semibold text-gray-900">Google Scholar</h3>
-                <p className="text-gray-600 text-sm">
+                {/* CHANGED: Added dark:text-gray-100 */}
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100">Google Scholar</h3>
+                {/* CHANGED: Added dark:text-gray-300 */}
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Citation metrics and publications
                 </p>
               </div>
@@ -94,12 +107,12 @@ export default function Publications() {
               href="https://orcid.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-200"
+              className="flex items-center p-4 bg-white dark:bg-gray-700 border dark:border-gray-600 rounded-lg hover:shadow-md transition-shadow duration-200"
             >
               <ExternalLink className="w-6 h-6 text-green-600 mr-4" />
               <div>
-                <h3 className="font-semibold text-gray-900">ORCID</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100">ORCID</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Persistent researcher identifier
                 </p>
               </div>
@@ -111,8 +124,6 @@ export default function Publications() {
     </div>
   );
 }
-
-
 
 
 

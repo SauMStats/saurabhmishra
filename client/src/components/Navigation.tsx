@@ -20,6 +20,16 @@ export default function Navigation() {
     }));
   };
 
+  // ADDED: Function to close mobile menu
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileDropdowns({
+      research: false,
+      teaching: false,
+      activities: false
+    });
+  };
+
   const isActive = (path: string) => location === path;
   const isActiveSection = (section: string) => location.startsWith(`/${section}`);
 
@@ -64,7 +74,7 @@ export default function Navigation() {
                 Research
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+              <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700">
                 {/* <Link href="/research/group" className="nav-dropdown-item" data-testid="link-research-group">
                   Research Group
                 </Link> */}
@@ -73,6 +83,10 @@ export default function Navigation() {
                 </Link>
                 <Link href="/research/publications" className="nav-dropdown-item" data-testid="link-research-publications">
                   Publications
+                </Link>
+                {/* ADDED: Software & Code link */}
+                <Link href="/research/software" className="nav-dropdown-item" data-testid="link-research-software">
+                  Software & Code
                 </Link>
                 {/* <Link href="/research/collaborators" className="nav-dropdown-item" data-testid="link-research-collaborators">
                   Collaborators
@@ -89,7 +103,7 @@ export default function Navigation() {
                 Teaching
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+              <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700">
                 {/* <Link href="/teaching/courses" className="nav-dropdown-item" data-testid="link-teaching-courses">
                   Courses
                 </Link> */}
@@ -108,7 +122,7 @@ export default function Navigation() {
                 Activities
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100">
+              <div className="dropdown-menu absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700">
                 <Link href="/activities/sports" className="nav-dropdown-item" data-testid="link-activities-sports">
                   Fitness & Sports
                 </Link>
@@ -177,10 +191,11 @@ export default function Navigation() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800" data-testid="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-home">
+              {/* CHANGED: Added onClick={closeMobileMenu} to all links */}
+              <Link href="/" onClick={closeMobileMenu} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-home">
                 Home
               </Link>
-              <Link href="/bio" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-bio">
+              <Link href="/bio" onClick={closeMobileMenu} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-bio">
                 Bio
               </Link>
               
@@ -196,16 +211,20 @@ export default function Navigation() {
                 </button>
                 {mobileDropdowns.research && (
                   <div className="mt-2 ml-4 space-y-1">
-                    {/* <Link href="/research/group" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-group">
+                    {/* <Link href="/research/group" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-group">
                       Research Group
                     </Link> */}
-                    <Link href="/research/talks" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-talks">
+                    <Link href="/research/talks" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-talks">
                       Talks
                     </Link>
-                    <Link href="/research/publications" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-publications">
+                    <Link href="/research/publications" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-publications">
                       Publications
                     </Link>
-                    {/* <Link href="/research/collaborators" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-collaborators">
+                    {/* ADDED: Software & Code link */}
+                    <Link href="/research/software" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-software">
+                      Software & Code
+                    </Link>
+                    {/* <Link href="/research/collaborators" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-research-collaborators">
                       Collaborators
                     </Link> */}
                   </div>
@@ -224,10 +243,10 @@ export default function Navigation() {
                 </button>
                 {mobileDropdowns.teaching && (
                   <div className="mt-2 ml-4 space-y-1">
-                    {/* <Link href="/teaching/courses" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-teaching-courses">
+                    {/* <Link href="/teaching/courses" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-teaching-courses">
                       Courses
                     </Link> */}
-                    <Link href="/teaching/ta" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-teaching-ta">
+                    <Link href="/teaching/ta" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-teaching-ta">
                       Teaching Assistant
                     </Link>
                   </div>
@@ -246,29 +265,29 @@ export default function Navigation() {
                 </button>
                 {mobileDropdowns.activities && (
                   <div className="mt-2 ml-4 space-y-1">
-                    <Link href="/activities/sports" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-sports">
+                    <Link href="/activities/sports" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-sports">
                       Fitness & Sports
                     </Link>
-                    {/* <Link href="/activities/movies" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-movies">
+                    {/* <Link href="/activities/movies" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-movies">
                       Movies
                     </Link> */}
-                    {/* <Link href="/activities/books" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-books">
+                    {/* <Link href="/activities/books" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-books">
                       Books
                     </Link> */}
-                    {/* <Link href="/activities/exercise" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-exercise">
+                    {/* <Link href="/activities/exercise" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-exercise">
                       Exercise
                     </Link> */}
-                    {/* <Link href="/activities/gallery" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-gallery">
+                    {/* <Link href="/activities/gallery" onClick={closeMobileMenu} className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-academic-blue" data-testid="mobile-link-activities-gallery">
                       Photos
                     </Link> */}
                   </div>
                 )}
               </div>
 
-              <Link href="/blog" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-blog">
+              <Link href="/blog" onClick={closeMobileMenu} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-blog">
                 Blog
               </Link>
-              <Link href="/contact" className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-contact">
+              <Link href="/contact" onClick={closeMobileMenu} className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-academic-blue hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200" data-testid="mobile-link-contact">
                 Contact
               </Link>
             </div>

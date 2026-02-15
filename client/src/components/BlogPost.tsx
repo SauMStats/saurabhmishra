@@ -447,7 +447,6 @@
 
 
 ////////////// TRYING FOR MULTIPLE PDFs and IMAGES ////////////////// (Working)
-
 import { useParams, Link } from "wouter";
 import { Calendar, Clock, ArrowLeft, User, Tag, FileText } from "lucide-react";
 import { useEffect } from "react";
@@ -476,7 +475,7 @@ export default function BlogPost() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600" data-testid="loading-spinner"></div>
@@ -488,17 +487,17 @@ export default function BlogPost() {
 
   if (error || !post) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 py-16">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4" data-testid="text-error-heading">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4" data-testid="text-error-heading">
               Blog Post Not Found
             </h1>
-            <p className="text-gray-600 mb-8" data-testid="text-error-message">
+            <p className="text-gray-600 dark:text-gray-400 mb-8" data-testid="text-error-message">
               The blog post you're looking for doesn't exist or has been moved.
             </p>
             <Link href="/blog">
-              <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200" data-testid="link-back-to-blog">
+              <a className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200" data-testid="link-back-to-blog">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Blog
               </a>
@@ -513,13 +512,13 @@ export default function BlogPost() {
   const pdfsToShow = post.pdfs || (post.pdf ? [{ title: "Attached Document", filename: post.pdf }] : []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="mb-8">
             <Link href="/blog">
-              <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 group" data-testid="link-back-to-blog">
+              <a className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 group" data-testid="link-back-to-blog">
                 <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                 Back to Blog
               </a>
@@ -527,17 +526,17 @@ export default function BlogPost() {
           </div>
 
           <header>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-4 leading-snug">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 dark:text-gray-100 mb-4 leading-snug">
               {post.title}
             </h1>
             
-            <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8" data-testid="blog-post-meta">
+            <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-400 mb-8" data-testid="blog-post-meta">
               <div className="flex items-center">
-                <User className="w-4 h-4 mr-2 text-gray-400" />
+                <User className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
                 <span className="font-medium">{post.author || 'Saurabh Mishra'}</span>
               </div>
               <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2 text-gray-400" />
+                <Calendar className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
                 <time dateTime={new Date(post.publishedAt).toISOString()}>
                   {new Date(post.publishedAt).toLocaleDateString('en-US', {
                     year: 'numeric',
@@ -547,7 +546,7 @@ export default function BlogPost() {
                 </time>
               </div>
               <div className="flex items-center">
-                <Clock className="w-4 h-4 mr-2 text-gray-400" />
+                <Clock className="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500" />
                 <span>{post.readTime}</span>
               </div>
             </div>
@@ -558,7 +557,7 @@ export default function BlogPost() {
                 {post.tags.map(tag => (
                   <span 
                     key={tag}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"
                   >
                     <Tag className="w-3 h-3 mr-1" />
                     {tag}
@@ -568,8 +567,8 @@ export default function BlogPost() {
             )}
 
             {/* Excerpt */}
-            <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg" data-testid="blog-post-excerpt">
-              <p className="text-lg text-gray-700 leading-relaxed italic">
+            <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-600 p-6 rounded-r-lg" data-testid="blog-post-excerpt">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic">
                 {post.excerpt}
               </p>
             </div>
@@ -591,7 +590,7 @@ export default function BlogPost() {
 
       {/* Article Content */}
       <article className="max-w-4xl mx-auto px-6 py-12" data-testid={`blog-post-${post.slug}`}>
-        <div className="bg-white rounded-lg shadow-sm p-8 md:p-12" data-testid="blog-post-content">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-8 md:p-12" data-testid="blog-post-content">
           <MarkdownRenderer content={post.content} />
 
           {/* PDF Viewer Section - Multiple PDFs Support */}
@@ -602,7 +601,7 @@ export default function BlogPost() {
               </div>
             }>
               <div className="mt-16 space-y-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-3 border-b-2 border-gray-200 dark:border-gray-700">
                   Attached Documents
                 </h2>
                 {pdfsToShow.map((pdf, index) => (
@@ -627,7 +626,7 @@ export default function BlogPost() {
 
       {/* Article Footer */}
       <footer className="max-w-4xl mx-auto px-6 pb-16" data-testid="blog-post-footer">
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 shadow-sm border border-blue-100">
+        {/* <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-8 shadow-sm border border-blue-100 dark:border-gray-600">
           <div className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-6">
             <div className="flex-shrink-0">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
@@ -635,21 +634,21 @@ export default function BlogPost() {
               </div>
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">About the Author</h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">About the Author</h3>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                 Saurabh Mishra is a PhD student in Mathematics working in statistical genetics, 
                 genome-wide association studies (GWAS), transcriptome-wide association studies (TWAS), 
                 and gene–environment interactions.
               </p>
               <Link href="/bio">
-                <a className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors duration-200 group" data-testid="link-author-bio">
+                <a className="inline-flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 group" data-testid="link-author-bio">
                   Learn more about Saurabh
                   <ArrowLeft className="w-4 h-4 ml-2 rotate-180 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="mt-12 text-center">
           <Link href="/blog">

@@ -455,7 +455,6 @@
 // }
 
 
-
 //// For Image support and multiple PDF support
 
 // import React from "react";
@@ -519,19 +518,19 @@ export default function MarkdownRenderer({
         rehypePlugins={[rehypeKatex, rehypeRaw]}
         components={{
           h1: ({ ...props }) => (
-            <h1 className="text-4xl font-bold mt-10 mb-6 text-gray-900 leading-tight" {...props} />
+            <h1 className="text-4xl font-bold mt-10 mb-6 text-gray-900 dark:text-gray-100 leading-tight" {...props} />
           ),
           h2: ({ ...props }) => (
-            <h2 className="text-3xl font-semibold mt-8 mb-5 text-gray-900 leading-tight" {...props} />
+            <h2 className="text-3xl font-semibold mt-8 mb-5 text-gray-900 dark:text-gray-100 leading-tight" {...props} />
           ),
           h3: ({ ...props }) => (
-            <h3 className="text-2xl font-semibold mt-6 mb-4 text-gray-900 leading-snug" {...props} />
+            <h3 className="text-2xl font-semibold mt-6 mb-4 text-gray-900 dark:text-gray-100 leading-snug" {...props} />
           ),
           h4: ({ ...props }) => (
-            <h4 className="text-xl font-semibold mt-5 mb-3 text-gray-900 leading-snug" {...props} />
+            <h4 className="text-xl font-semibold mt-5 mb-3 text-gray-900 dark:text-gray-100 leading-snug" {...props} />
           ),
           p: ({ ...props }) => (
-            <p className="leading-relaxed mb-5 text-lg text-gray-700" {...props} />
+            <p className="leading-relaxed mb-5 text-lg text-gray-700 dark:text-gray-300" {...props} />
           ),
           // // Enhanced image support
           // img: ({ src, alt, title, ...props }) => (
@@ -751,17 +750,17 @@ export default function MarkdownRenderer({
 
           // Bold text
           strong: ({ ...props }) => (
-            <strong className="font-bold text-gray-900" {...props} />
+            <strong className="font-bold text-gray-900 dark:text-gray-100" {...props} />
           ),
           // Italic text
           em: ({ ...props }) => (
-            <em className="italic text-gray-700" {...props} />
+            <em className="italic text-gray-700 dark:text-gray-300" {...props} />
           ),
           // Links
           a: ({ href, children, ...props }) => (
             <a 
               href={href} 
-              className="text-blue-600 hover:text-blue-800 underline transition-colors"
+              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors"
               target={href?.startsWith('http') ? '_blank' : undefined}
               rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
               {...props}
@@ -822,7 +821,7 @@ export default function MarkdownRenderer({
 
               if (inline) {
                 return (
-                  <code className="px-1.5 py-0.5 bg-slate-100 rounded-md text-red-600 text-sm font-mono">
+                  <code className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 rounded-md text-red-600 dark:text-red-400 text-sm font-mono">
                     {children}
                   </code>
                 );
@@ -841,7 +840,7 @@ export default function MarkdownRenderer({
                   <button
                     onClick={handleCopy}
                     className="absolute top-2 right-2 text-xs
-                              text-slate-400 hover:text-slate-700
+                              text-slate-400 hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-300
                               opacity-0 group-hover:opacity-100 transition"
                   >
                     {copied ? "✓ Copied" : "Copy"}
@@ -849,8 +848,8 @@ export default function MarkdownRenderer({
 
                   <pre className="overflow-x-auto">
                     <code
-                      className="block rounded-xl bg-slate-50 border border-slate-200 
-                                p-6 text-sm text-slate-800 leading-relaxed font-mono"
+                      className="block rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700
+                                p-6 text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-mono"
                     >
                       {children}
                     </code>
@@ -864,7 +863,7 @@ export default function MarkdownRenderer({
           // Blockquotes
           blockquote: ({ ...props }) => (
             <blockquote 
-              className="my-6 pl-6 border-l-4 border-blue-500 italic text-gray-700 bg-blue-50 py-4 pr-4 rounded-r-lg"
+              className="my-6 pl-6 border-l-4 border-blue-500 italic text-gray-700 dark:text-gray-300 bg-blue-50 dark:bg-blue-900/20 py-4 pr-4 rounded-r-lg"
               {...props}
             />
           ),
@@ -878,26 +877,26 @@ export default function MarkdownRenderer({
           ),
           // List items
           li: ({ ...props }) => (
-            <li className="text-gray-700 leading-relaxed pl-2" {...props} />
+            <li className="text-gray-700 dark:text-gray-300 leading-relaxed pl-2" {...props} />
           ),
           // Horizontal rule
           hr: ({ ...props }) => (
-            <hr className="my-8 border-t-2 border-gray-200" {...props} />
+            <hr className="my-8 border-t-2 border-gray-200 dark:border-gray-700" {...props} />
           ),
           // Tables
           table: ({ ...props }) => (
             <div className="overflow-x-auto my-6">
-              <table className="min-w-full border-collapse border border-gray-300" {...props} />
+              <table className="min-w-full border-collapse border border-gray-300 dark:border-gray-700" {...props} />
             </div>
           ),
           thead: ({ ...props }) => (
-            <thead className="bg-gray-100" {...props} />
+            <thead className="bg-gray-100 dark:bg-gray-800" {...props} />
           ),
           th: ({ ...props }) => (
-            <th className="border border-gray-300 px-4 py-2 text-left font-semibold" {...props} />
+            <th className="border border-gray-300 dark:border-gray-700 px-4 py-2 text-left font-semibold text-gray-900 dark:text-gray-100" {...props} />
           ),
           td: ({ ...props }) => (
-            <td className="border border-gray-300 px-4 py-2" {...props} />
+            <td className="border border-gray-300 dark:border-gray-700 px-4 py-2 text-gray-700 dark:text-gray-300" {...props} />
           ),
         }}
       >
