@@ -9,6 +9,7 @@ excerpt: "Testing the new file-based blog system."
 # Hello from Markdown!
 
 This is a test post to verify the file-based blog system works.
+<!-- <p>यह एक ब्लॉग है जहाँ मैं सीखते हुए लिखता हूँ।</p> -->
 
 ## Features Working
 

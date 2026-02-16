@@ -24,11 +24,13 @@ export default function Home() {
             </h1>
             {/* CHANGED: Added dark:text-gray-400 */}
             <p className="text-xl md:text-2xl text-academic-gray dark:text-gray-400 mb-8 font-light" data-testid="text-title">
-              PhD Student in Mathematics | Biostatistics Researcher
+              {/* PhD Student in Mathematics | Biostatistics Researcher */}
+              PhD Student in Statistics | Statistical Genetics | Gene–Environment Interaction
             </p>
             {/* CHANGED: Added dark:text-gray-300 */}
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed" data-testid="text-bio">
-              Advancing statistical genetics and biostatistics through genome-wide association analysis (GWAS) and transcriptome-wide association analysis (TWAS), with focus on gene-environment interactions in complex traits.
+              {/* Advancing statistical genetics and biostatistics through genome-wide association analysis (GWAS) and transcriptome-wide association analysis (TWAS), with focus on gene-environment interactions in complex traits. */}
+              I develop scalable statistical methods for large-scale genetic association studies, with a primary focus on gene–environment interactions in complex traits.
             </p>
             
           </div>

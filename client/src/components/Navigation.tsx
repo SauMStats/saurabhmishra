@@ -44,7 +44,8 @@ export default function Navigation() {
               className="text-xl font-semibold text-gray-900 dark:text-white hover:text-academic-blue transition-colors duration-200"
               data-testid="link-logo"
             >
-              Saurabh Mishra
+              {/* Saurabh Mishra */}
+              सौरभ
             </Link>
           </div>
 
