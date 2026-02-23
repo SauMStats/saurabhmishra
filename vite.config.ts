@@ -46,7 +46,7 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import markdownBlogPlugin from "./client/src/plugins/vite-plugin-markdown-blog";
 
 export default defineConfig({
-  base: "/saurabhmishra/",
+  base: "/",
   plugins: [
     markdownBlogPlugin(),  // The plugin for blog 12th feb
     react(),

@@ -160,7 +160,7 @@ function App() {
   return (
     <TooltipProvider>
       <Toaster />
-      <Router base="/saurabhmishra">
+      <Router base="">
         <AppRoutes />
       </Router>
     </TooltipProvider>
