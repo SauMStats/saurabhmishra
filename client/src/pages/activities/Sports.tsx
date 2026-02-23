@@ -198,11 +198,12 @@ export default function Sports() {
                 </div>
                 <div className="flex items-center">
                   <Target className="w-4 h-4 mr-2 text-academic-blue" />
-                  <span>Learning swimming</span>
+                  <span>Learning</span>
                 </div>
               </div>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                I use swimming as an alternative to morning running(when I skip), primarily to learn proper swimming techniques while maintaining fitness.
+                {/* I use swimming as an alternative to morning running(when I skip), primarily to learn proper swimming techniques while maintaining fitness. */}
+                I occasionally trade my morning run for a swim — partly to keep things interesting, partly to keep myself honest.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Learning</span>
@@ -307,7 +308,7 @@ export default function Sports() {
             </p>
           </div>
           
-          <div className="mt-6 grid md:grid-cols-3 gap-4 text-center">
+          {/* <div className="mt-6 grid md:grid-cols-3 gap-4 text-center">
             <div className="bg-white p-4 rounded-lg">
               <div className="text-2xl font-bold text-academic-blue mb-2">8+</div>
               <div className="text-gray-600 dark:text-gray-300 text-sm">Hours/Week Training</div>
@@ -320,7 +321,7 @@ export default function Sports() {
               <div className="text-2xl font-bold text-academic-blue mb-2">4</div>
               <div className="text-gray-600 dark:text-gray-300 text-sm">Years Competing</div>
             </div>
-          </div>
+          </div> */}
         </section>
       </div>
     </div>

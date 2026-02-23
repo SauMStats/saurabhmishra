@@ -19,11 +19,12 @@ export default function Contact() {
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-8">
             <div className="space-y-8">
               <div>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6" data-testid="text-contact-info-heading">
+                {/* <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6" data-testid="text-contact-info-heading">
                   Get In Touch
-                </h2>
+                </h2> */}
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                  I'm always interested in discussing research collaborations, speaking at conferences, or exploring new opportunities in biostatistics and statistical genetics. Feel free to reach out!
+                  {/* I'm always interested in discussing research collaborations, speaking at conferences, or exploring new opportunities in biostatistics and statistical genetics. Feel free to reach out! */}
+                  I welcome conversations on research collaborations, invited talks, and new ideas in biostatistics and statistical genetics.
                 </p>
               </div>
 
@@ -33,7 +34,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
                     <a href="mailto:saurabh.mishra@iith.ac.in" className="text-academic-blue hover:text-blue-700 transition-colors duration-200">
-                      saurabh.iith.stats@iith.ac.in
+                      saurabh.iith.stats@gmail.com
                     </a>
                   </div>
                 </div>
@@ -94,7 +95,7 @@ export default function Contact() {
 
               {/* Research Interests */}
               <div className="bg-academic-light dark:bg-gray-700 p-6 rounded-lg" data-testid="section-collaboration">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Collaboration Interests</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-3">I am particularly interested in collaborations involving:</h3>
                 <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1">
                   <li>• Statistical Genetics & GWAS Methodology</li>
                   <li>• Transcriptome-Wide Association Studies</li>
@@ -102,7 +103,7 @@ export default function Contact() {
                   <li>• Machine Learning in Biostatistics</li>
                   <li>• Causal Inference Methods</li>
                   <li>• Large-Scale Biological Data Analysis</li>
-                  <li>• Academic Conference Speaking</li>
+                  <li>• Talks & Conference Presentations</li>
                 </ul>
               </div>
             </div>
